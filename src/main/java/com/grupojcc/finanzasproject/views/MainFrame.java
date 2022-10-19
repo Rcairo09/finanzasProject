@@ -52,6 +52,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         newMenuItem = new javax.swing.JMenu();
         newButtonItem = new javax.swing.JMenuItem();
+        razonesButtonItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jLabel2.setText("jLabel2");
@@ -75,6 +76,10 @@ public class MainFrame extends javax.swing.JFrame {
         newButtonItem.setText("Nuevo Balance General");
         newButtonItem.setActionCommand("Nuevo");
         newMenuItem.add(newButtonItem);
+
+        razonesButtonItem.setText("Razones Financieras");
+        razonesButtonItem.setActionCommand("razones");
+        newMenuItem.add(razonesButtonItem);
 
         jMenuBar1.add(newMenuItem);
 
@@ -107,7 +112,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem newButtonItem;
+    public javax.swing.JMenuItem newButtonItem;
     public javax.swing.JMenu newMenuItem;
+    public javax.swing.JMenuItem razonesButtonItem;
     // End of variables declaration//GEN-END:variables
 }

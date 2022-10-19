@@ -23,6 +23,18 @@
                 <Property name="text" type="java.lang.String" value="Nuevo Balance General"/>
                 <Property name="actionCommand" type="java.lang.String" value="Nuevo"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="razonesButtonItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Razones Financieras"/>
+                <Property name="actionCommand" type="java.lang.String" value="razones"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </MenuItem>
           </SubComponents>
         </Menu>

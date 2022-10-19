@@ -11,10 +11,7 @@ import com.grupojcc.finanzasproject.views.MainFrame;
  * @author lenovo
  */
 public class main {
-<<<<<<< HEAD
-    //prueba
-    //comentarios
-=======
+    
   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -46,5 +43,5 @@ public class main {
             }
         });
     }  
->>>>>>> 94b4496cc0dafd6a2c39a8a99ac6ed3fa8821270
+
 }
