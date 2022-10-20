@@ -6,7 +6,10 @@ package com.grupojcc.finanzasproject.main;
 
 /**
  *
- * @author lenovo
+ * @author : Grupo de Finanzas
+ * Camilo Castro
+ * Cairo Rocha
+ * Johnny Lagos
  */
 public class main {
     
