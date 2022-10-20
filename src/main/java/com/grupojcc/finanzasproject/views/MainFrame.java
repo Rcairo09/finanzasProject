@@ -24,6 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void inicio(){
         ESFController esfc = new ESFController(this);
+        razonesButtonItem.addActionListener(esfc);
         newButtonItem.addActionListener(esfc);
     }
     
@@ -35,7 +36,13 @@ public class MainFrame extends javax.swing.JFrame {
             jDesktopPane1.getDesktopManager().maximizeFrame(ESFFrame);
         }
     }
-    
+    public void isVisible2(JInternalFrame razonesFrame, boolean maxizeFrame) {
+        jDesktopPane1.add(razonesFrame);
+        razonesFrame.setVisible(true);
+        if (maxizeFrame) {
+            jDesktopPane1.getDesktopManager().maximizeFrame(razonesFrame);
+        }
+    }
     
     
     /**

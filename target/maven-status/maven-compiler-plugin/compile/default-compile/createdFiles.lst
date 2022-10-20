@@ -7,3 +7,4 @@ com\grupojcc\finanzasproject\main\main.class
 com\grupojcc\finanzasproject\controllers\ESFController.class
 com\grupojcc\finanzasproject\views\ESFFrame$1.class
 com\grupojcc\finanzasproject\views\MainFrame.class
+com\grupojcc\finanzasproject\views\razonesFrame.class

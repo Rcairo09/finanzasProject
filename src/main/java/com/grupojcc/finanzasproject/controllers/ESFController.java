@@ -6,6 +6,7 @@ package com.grupojcc.finanzasproject.controllers;
 
 import com.grupojcc.finanzasproject.views.ESFFrame;
 import com.grupojcc.finanzasproject.views.MainFrame;
+import com.grupojcc.finanzasproject.views.razonesFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
 public class ESFController implements ActionListener{
     MainFrame mf;
     ESFFrame esff;
+    razonesFrame rF;
     
     public ESFController(MainFrame mf){
         this.mf = mf;
@@ -32,14 +34,21 @@ public class ESFController implements ActionListener{
             case "Nuevo":
                 isVisibleESFFrame();
                 break;
+            case "razones":
+                isVisibleRazonesF();
+                break;
         }
     }
     
-    
+    public void isVisibleRazonesF(){
+        razonesFrame rFrame = new razonesFrame();
+        mf.isVisible2(rFrame, true);
+    }
     public void isVisibleESFFrame() {
         ESFFrame esff = new ESFFrame();
         mf.isVisible(esff, true);
     }
+    
     
     
 }
