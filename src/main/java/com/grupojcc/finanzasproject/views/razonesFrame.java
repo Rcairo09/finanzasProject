@@ -13,6 +13,7 @@ import com.grupojcc.finanzasproject.models.razonesFormulas;
 public class razonesFrame extends javax.swing.JInternalFrame {
     razonesFormulas rf;
 
+
     /**
      * Creates new form razonesFrame
      */
@@ -23,6 +24,8 @@ public class razonesFrame extends javax.swing.JInternalFrame {
     public void ingresarDatos(){
         rf = new razonesFormulas();
         jTextField1.setText(String.valueOf(rf.getCapitalTrabajoNeto()) + "veces");
+        jTextField2.setText(String.valueOf(rf.getRazonCirculante()) + "veces");
+        jTextField3.setText(String.valueOf(rf.getRazonRapida()) + "veces");
         
     }
 
@@ -159,6 +162,7 @@ public class razonesFrame extends javax.swing.JInternalFrame {
         jTextField1.setEditable(false);
 
         jTextField2.setEditable(false);
+        jTextField2.setText("Valor Nulo");
 
         jTextField3.setEditable(false);
 

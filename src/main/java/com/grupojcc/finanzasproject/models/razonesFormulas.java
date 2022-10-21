@@ -9,7 +9,7 @@ package com.grupojcc.finanzasproject.models;
  * @author lenovo
  */
 public class razonesFormulas {
-    private double activoCirc;
+    private static double activoCirc;
     private double pasivoCirc;
     private double capitalTrabajoNeto; ////
     private double razonCirculante; ////
@@ -102,6 +102,7 @@ public class razonesFormulas {
 
     public void setCostoVentas(double costoVentas) {
         this.costoVentas = costoVentas;
+        
     }
 
     public double getVentasNetasCredito() {
@@ -386,3 +387,5 @@ public class razonesFormulas {
     
     
 }
+
+
