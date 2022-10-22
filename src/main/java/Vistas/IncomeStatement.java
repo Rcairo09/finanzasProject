@@ -4,6 +4,8 @@
  */
 package Vistas;
 
+import dol.CalculoEstadoDeResultado;
+
 /**
  *
  * @author Camilo Castro
@@ -13,8 +15,12 @@ public class IncomeStatement extends javax.swing.JFrame {
     /**
      * Creates new form IncomeStatement
      */
+    CalculoEstadoDeResultado CER;
+    
     public IncomeStatement() {
         initComponents();
+        CER = new CalculoEstadoDeResultado();
+        
     }
 
     /**
@@ -44,16 +50,17 @@ public class IncomeStatement extends javax.swing.JFrame {
         GVtxt = new javax.swing.JTextField();
         GAtxt = new javax.swing.JTextField();
         GFtxt = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnUtilidadOperacion = new javax.swing.JButton();
         UOtxt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         OGtxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         OPtxt = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        UNAIbtn = new javax.swing.JButton();
         UNAItxt = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        UNAItxt1 = new javax.swing.JTextField();
+        UEtxt = new javax.swing.JButton();
+        UtilidadDelEjerciciotxt = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +117,7 @@ public class IncomeStatement extends javax.swing.JFrame {
 
         jLabel5.setText("Costo de Ventas");
 
+        UBtxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         UBtxt.setEnabled(false);
         UBtxt.setFocusable(false);
 
@@ -134,10 +142,10 @@ public class IncomeStatement extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Utilidad de Operacion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnUtilidadOperacion.setText("Utilidad de Operacion");
+        btnUtilidadOperacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnUtilidadOperacionActionPerformed(evt);
             }
         });
 
@@ -153,28 +161,30 @@ public class IncomeStatement extends javax.swing.JFrame {
 
         jLabel11.setText("Otros Productos");
 
-        jButton2.setText("Utilidad Neta Antes de Impuestos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        UNAIbtn.setText("Utilidad Neta Antes de Impuestos");
+        UNAIbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                UNAIbtnActionPerformed(evt);
             }
         });
 
         UNAItxt.setEnabled(false);
 
-        jButton3.setText("Utilidad del Ejercicio");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        UEtxt.setText("Utilidad del Ejercicio");
+        UEtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                UEtxtActionPerformed(evt);
             }
         });
 
-        UNAItxt1.setEnabled(false);
-        UNAItxt1.addActionListener(new java.awt.event.ActionListener() {
+        UtilidadDelEjerciciotxt.setEnabled(false);
+        UtilidadDelEjerciciotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UNAItxt1ActionPerformed(evt);
+                UtilidadDelEjerciciotxtActionPerformed(evt);
             }
         });
+
+        jLabel12.setText("30% Impuesto");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -182,15 +192,18 @@ public class IncomeStatement extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(UNAItxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(29, 29, 29)
-                        .addComponent(UNAItxt))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(UEtxt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))
+                            .addComponent(UNAIbtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UNAItxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(UtilidadDelEjerciciotxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -198,11 +211,12 @@ public class IncomeStatement extends javax.swing.JFrame {
                             .addComponent(UBbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(117, 117, 117)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CVtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(Ventastxt)
-                            .addComponent(UBtxt)
-                            .addComponent(GVtxt)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(CVtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                .addComponent(Ventastxt)
+                                .addComponent(UBtxt))
+                            .addComponent(GVtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
@@ -213,7 +227,7 @@ public class IncomeStatement extends javax.swing.JFrame {
                             .addComponent(GAtxt)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(btnUtilidadOperacion)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,7 +259,7 @@ public class IncomeStatement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addComponent(GVtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -258,7 +272,7 @@ public class IncomeStatement extends javax.swing.JFrame {
                     .addComponent(GFtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnUtilidadOperacion)
                     .addComponent(UOtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -268,15 +282,16 @@ public class IncomeStatement extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(OPtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(UNAIbtn)
                     .addComponent(UNAItxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(UNAItxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(UEtxt)
+                    .addComponent(UtilidadDelEjerciciotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -305,32 +320,47 @@ public class IncomeStatement extends javax.swing.JFrame {
     }//GEN-LAST:event_VentastxtActionPerformed
 
     private void UBbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UBbtnActionPerformed
-        // TODO add your handling code here:
+        double ventas = Double.parseDouble(Ventastxt.getText());
+        double costoVenta = Double.parseDouble(CVtxt.getText());
+        String Resultado = String.valueOf(CER.UtilidadOPerdidaBruta(ventas, costoVenta));
+        UBtxt.setText(Resultado);
+
     }//GEN-LAST:event_UBbtnActionPerformed
 
     private void GVtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GVtxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GVtxtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnUtilidadOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUtilidadOperacionActionPerformed
+        double GastoV = Double.parseDouble(GVtxt.getText());
+        double GastoA = Double.parseDouble(GAtxt.getText());
+        double GastoF = Double.parseDouble(GFtxt.getText());
+        double Resultado = Double.parseDouble(UBtxt.getText());
+        String UtilidadOperacion = String.valueOf(CER.UtilidadDeOperacion(Resultado, GastoA, GastoV, GastoF));
+        UOtxt.setText(UtilidadOperacion);
+    }//GEN-LAST:event_btnUtilidadOperacionActionPerformed
 
     private void OGtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OGtxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OGtxtActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void UNAIbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNAIbtnActionPerformed
+        double OtrosGastos = Double.parseDouble(OGtxt.getText());
+        double OtrosProductos = Double.parseDouble(OPtxt.getText());
+        double UtilidadOperacion = Double.parseDouble(UOtxt.getText());
+        String UtilidadNetaAI = String.valueOf(CER.UNantesDeImpuesto(UtilidadOperacion, OtrosGastos, OtrosGastos));
+        UNAItxt.setText(UtilidadNetaAI);
+    }//GEN-LAST:event_UNAIbtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void UEtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UEtxtActionPerformed
+        double UNAI = Double.parseDouble(UNAItxt.getText());
+        String UtilidadDespuesDI = String.valueOf(CER.UNdespuesDeImpuestos(UNAI));
+        UtilidadDelEjerciciotxt.setText(UtilidadDespuesDI);
+    }//GEN-LAST:event_UEtxtActionPerformed
 
-    private void UNAItxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNAItxt1ActionPerformed
+    private void UtilidadDelEjerciciotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UtilidadDelEjerciciotxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UNAItxt1ActionPerformed
+    }//GEN-LAST:event_UtilidadDelEjerciciotxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -376,16 +406,17 @@ public class IncomeStatement extends javax.swing.JFrame {
     private javax.swing.JTextField OPtxt;
     private javax.swing.JButton UBbtn;
     private javax.swing.JTextField UBtxt;
+    private javax.swing.JButton UEtxt;
+    private javax.swing.JButton UNAIbtn;
     private javax.swing.JTextField UNAItxt;
-    private javax.swing.JTextField UNAItxt1;
     private javax.swing.JTextField UOtxt;
+    private javax.swing.JTextField UtilidadDelEjerciciotxt;
     private javax.swing.JTextField Ventastxt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnUtilidadOperacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -4,13 +4,18 @@
  */
 package com.grupojcc.finanzasproject.main;
 
+import Vistas.ESMenu;
+
 /**
  *
- * @author : Grupo de Finanzas
- * Camilo Castro
- * Cairo Rocha
- * Johnny Lagos
+ * @author : Grupo de Finanzas - Camilo Castro - Cairo Rocha - Johnny Lagos
  */
-public class main {
-    
+public class Main {
+
+    public static void main(String[] args) {
+        ESMenu menuEstadoR = new ESMenu();
+        //System.out.println("TODO: Ingresar data display");
+
+    }
+
 }
