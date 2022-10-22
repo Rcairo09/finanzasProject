@@ -4,15 +4,19 @@
  */
 package com.grupojcc.finanzasproject.views;
 
+import com.grupojcc.finanzasproject.controllers.BalanceController;
+import com.grupojcc.finanzasproject.controllers.ESFController;
+import com.grupojcc.finanzasproject.models.ESFModel;
 import com.grupojcc.finanzasproject.models.razonesFormulas;
 
 /**
  *
  * @author lenovo
  */
-public class razonesFrame extends javax.swing.JInternalFrame {
+public class razonesFrame extends javax.swing.JInternalFrame{
     razonesFormulas rf;
     ESFFrame ef;
+    ESFModel efM;
 
 
     /**
@@ -20,27 +24,45 @@ public class razonesFrame extends javax.swing.JInternalFrame {
      */
     public razonesFrame() {
         initComponents();
-        ingresarDatos();
     }
-    public void ingresarDatos(){
-        ef = new ESFFrame();
-        rf = new razonesFormulas(); 
-        if(ef.totalActivosCirculantesTxt.getText().isEmpty()){
-            
-        }
-        /*if(ef.totalActivosCirculantesTxt.getText().isEmpty() || ef.totalPasivoCirculanteTxt.getText().isEmpty() ){
-            jTextField1.setText("Valor nulo");
-        }
-        else{
+       public void inicio(){
+
+    }
+        public void ingresarDatos(){
+            rf = new razonesFormulas();
+            ef = new ESFFrame();  
             rf.setCapitalTrabajoNeto(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()));
-            jTextField1.setText(String.valueOf(rf.getCapitalTrabajoNeto()));
-            //rf.setRazonCirculante(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()));
-        }
-        
-        jTextField1.setText(String.valueOf(rf.getCapitalTrabajoNeto()) + "veces");
-        jTextField2.setText(String.valueOf(rf.getRazonCirculante()) + "veces");
-        jTextField3.setText(String.valueOf(rf.getRazonRapida()) + "veces");*/
-        
+            //rf.setCapitalTrabajoNeto(efM.getTotalActivosCirculantes(), efM.getTotalPasivosCirculantes());
+            txtCapitalNetoT.setText(String.valueOf(rf.getCapitalTrabajoNeto()));
+            rf.setRazonCirculante(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()));
+            txtRazonCirc.setText(String.valueOf(rf.getRazonCirculante()));
+            rf.setRazonRapida(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()), Double.parseDouble(ef.inventariosTxt.getText()));
+            txtRazonRap.setText(String.valueOf(rf.getRazonRapida()));
+            /////////////////////////////////
+            rf.setRotacionInventario(0, Double.parseDouble(ef.inventariosTxt.getText()));/////
+            txtRInv.setText(String.valueOf(rf.getRotacionInventario()));
+            rf.setrCuentasPorCobrar(0, Double.parseDouble(ef.documentosPorCobrarTxt.getText()));//////
+            txtCuentasXCob.setText(String.valueOf(rf.getrCuentasPorCobrar()));
+            rf.setpPromedioCobro(Double.parseDouble(ef.documentosPorCobrarTxt.getText()), 0);/////
+            txtPromCobro.setText(String.valueOf(rf.getpPromedioCobro()));
+            rf.setpPromedioPago(Double.parseDouble(ef.documentosPorPagarTxt.getText()), 0);/////
+            txtPromPago.setText(String.valueOf(rf.getpPromedioPago()));
+            rf.setrActivosFijos(0, Double.parseDouble(ef.totalActivosFijosTxt.getText()));///////
+            txtRActivosFijos.setText(String.valueOf(rf.getrActivosFijos()));
+            rf.setrActivosTotales(WIDTH, Double.parseDouble(ef.totalActivos.getText()));/////
+            txtRActivosTot.setText(String.valueOf(rf.getrActivosTotales()));
+            rf.setrDeudaTotal(Double.parseDouble(ef.totalPasivosTxt.getText()), Double.parseDouble(ef.totalActivos.getText()));
+            txtDeudaTot.setText(String.valueOf(rf.getrDeudaTotal()));
+            rf.setrPasivoCapital(Double.parseDouble(ef.totalPasivosNoCirculantesTxt.getText()), Double.parseDouble(ef.capitalSocialTxt.getText()));
+            txtPasivoCapital.setText(String.valueOf(rf.getrPasivoCapital()));
+            rf.setrInteresesUtilidades(TOP_ALIGNMENT, PROPERTIES);//////////
+            txtIntUti.setText(String.valueOf(rf.getrInteresesUtilidades()));
+            rf.setmUtilidadBruta(WIDTH, WIDTH);///////
+            txtUtiBruta.setText(String.valueOf(rf.getmUtilidadBruta()));
+            rf.setmUtilidadOperativa(PROPERTIES, WIDTH);///////////
+            txtUtiOpe.setText(String.valueOf(rf.getmUtilidadOperativa()));
+            rf.setmUtilidadNeta(WIDTH, WIDTH);///////////
+            txtUtiNeta.setText(String.valueOf(rf.getmUtilidadNeta()));
     }
 
     /**
@@ -82,23 +104,24 @@ public class razonesFrame extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        txtCapitalNetoT = new javax.swing.JTextField();
+        txtRazonCirc = new javax.swing.JTextField();
+        txtRazonRap = new javax.swing.JTextField();
+        txtRInv = new javax.swing.JTextField();
+        txtCuentasXCob = new javax.swing.JTextField();
+        txtPromCobro = new javax.swing.JTextField();
+        txtPromPago = new javax.swing.JTextField();
+        txtRActivosFijos = new javax.swing.JTextField();
+        txtRActivosTot = new javax.swing.JTextField();
+        txtIntUti = new javax.swing.JTextField();
+        txtPasivoCapital = new javax.swing.JTextField();
+        txtDeudaTot = new javax.swing.JTextField();
+        txtUtiBruta = new javax.swing.JTextField();
+        txtUtiOpe = new javax.swing.JTextField();
+        txtUtiNeta = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(153, 153, 153));
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -173,36 +196,50 @@ public class razonesFrame extends javax.swing.JInternalFrame {
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("M. Utilidad Neta");
 
-        jTextField1.setEditable(false);
+        txtCapitalNetoT.setEditable(false);
+        txtCapitalNetoT.setText("0");
 
-        jTextField2.setEditable(false);
-        jTextField2.setText("Valor Nulo");
+        txtRazonCirc.setEditable(false);
+        txtRazonCirc.setText("0");
 
-        jTextField3.setEditable(false);
+        txtRazonRap.setEditable(false);
+        txtRazonRap.setText("0");
 
-        jTextField4.setEditable(false);
+        txtRInv.setEditable(false);
+        txtRInv.setText("0");
 
-        jTextField5.setEditable(false);
+        txtCuentasXCob.setEditable(false);
+        txtCuentasXCob.setText("0");
 
-        jTextField6.setEditable(false);
+        txtPromCobro.setEditable(false);
+        txtPromCobro.setText("0");
 
-        jTextField7.setEditable(false);
+        txtPromPago.setEditable(false);
+        txtPromPago.setText("0");
 
-        jTextField8.setEditable(false);
+        txtRActivosFijos.setEditable(false);
+        txtRActivosFijos.setText("0");
 
-        jTextField9.setEditable(false);
+        txtRActivosTot.setEditable(false);
+        txtRActivosTot.setText("0");
 
-        jTextField10.setEditable(false);
+        txtIntUti.setEditable(false);
+        txtIntUti.setText("0");
 
-        jTextField11.setEditable(false);
+        txtPasivoCapital.setEditable(false);
+        txtPasivoCapital.setText("0");
 
-        jTextField12.setEditable(false);
+        txtDeudaTot.setEditable(false);
+        txtDeudaTot.setText("0");
 
-        jTextField13.setEditable(false);
+        txtUtiBruta.setEditable(false);
+        txtUtiBruta.setText("0");
 
-        jTextField14.setEditable(false);
+        txtUtiOpe.setEditable(false);
+        txtUtiOpe.setText("0");
 
-        jTextField15.setEditable(false);
+        txtUtiNeta.setEditable(false);
+        txtUtiNeta.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,20 +286,20 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                                                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(txtPromPago, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtRActivosFijos, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtRActivosTot, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtPromCobro, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtCuentasXCob, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtRInv, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(35, 35, 35)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                    .addComponent(txtDeudaTot, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtPasivoCapital, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtIntUti, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,9 +310,9 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(33, 33, 33)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtCapitalNetoT, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtRazonCirc, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtRazonRap, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(11, 11, 11)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -295,9 +332,9 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtUtiBruta, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtUtiOpe, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtUtiNeta, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -327,11 +364,11 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCapitalNetoT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtRazonCirc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtRazonRap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addGap(7, 7, 7)
@@ -354,17 +391,17 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel13))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtRInv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCuentasXCob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPromCobro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPromPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtRActivosFijos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtRActivosTot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel17))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -384,11 +421,11 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDeudaTot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPasivoCapital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtIntUti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(8, 8, 8)
                 .addComponent(jLabel18)
@@ -405,11 +442,11 @@ public class razonesFrame extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUtiBruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUtiOpe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtUtiNeta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(664, Short.MAX_VALUE))
         );
 
@@ -419,11 +456,11 @@ public class razonesFrame extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
         );
 
         pack();
@@ -461,20 +498,20 @@ public class razonesFrame extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField txtCapitalNetoT;
+    public javax.swing.JTextField txtCuentasXCob;
+    public javax.swing.JTextField txtDeudaTot;
+    public javax.swing.JTextField txtIntUti;
+    public javax.swing.JTextField txtPasivoCapital;
+    public javax.swing.JTextField txtPromCobro;
+    public javax.swing.JTextField txtPromPago;
+    public javax.swing.JTextField txtRActivosFijos;
+    public javax.swing.JTextField txtRActivosTot;
+    public javax.swing.JTextField txtRInv;
+    public javax.swing.JTextField txtRazonCirc;
+    public javax.swing.JTextField txtRazonRap;
+    public javax.swing.JTextField txtUtiBruta;
+    public javax.swing.JTextField txtUtiNeta;
+    public javax.swing.JTextField txtUtiOpe;
     // End of variables declaration//GEN-END:variables
 }

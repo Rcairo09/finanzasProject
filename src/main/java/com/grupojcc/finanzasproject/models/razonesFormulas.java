@@ -4,12 +4,14 @@
  */
 package com.grupojcc.finanzasproject.models;
 
+
+
 /**
  *
  * @author lenovo
  */
-public class razonesFormulas {
-    private static double activoCirc;
+public class razonesFormulas{
+    private double activoCirc;
     private double pasivoCirc;
     private double capitalTrabajoNeto; ////
     private double razonCirculante; ////

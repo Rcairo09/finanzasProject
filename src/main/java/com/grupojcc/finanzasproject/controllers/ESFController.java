@@ -42,6 +42,7 @@ public class ESFController implements ActionListener{
     
     public void isVisibleRazonesF(){
         razonesFrame rFrame = new razonesFrame();
+        rFrame.ingresarDatos();
         mf.isVisible2(rFrame, true);
     }
     public void isVisibleESFFrame() {
