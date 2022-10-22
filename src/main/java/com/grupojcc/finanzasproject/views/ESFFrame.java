@@ -595,7 +595,7 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel47)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                                         .addComponent(propagandaPublicidad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1232,13 +1232,11 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                                 .addGap(147, 147, 147)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(AccountCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(readButton)
                                 .addGap(121, 121, 121))))))
         );
@@ -1498,50 +1496,50 @@ public class ESFFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> AccountCombo;
-    private javax.swing.JTextField BancosTxt;
-    private javax.swing.JTextField ClientesTxt;
-    private javax.swing.JTextField InteresesAnticipadosTxt;
-    private javax.swing.JTextField InteresesTxt;
-    private javax.swing.JTextField IvaAcreditableTxt;
+    public javax.swing.JTextField BancosTxt;
+    public javax.swing.JTextField ClientesTxt;
+    public javax.swing.JTextField InteresesAnticipadosTxt;
+    public javax.swing.JTextField InteresesTxt;
+    public javax.swing.JTextField IvaAcreditableTxt;
     public javax.swing.JTextField MontoTxt;
     public javax.swing.JComboBox<String> SubGroupCombo;
     public javax.swing.JComboBox<String> SubSubGroupCombo;
     private javax.swing.JLabel SubSubGroupItem;
-    private javax.swing.JTextField acreedoresDiversosTxt;
-    private javax.swing.JTextField acreedoresHipotecariosTxt;
+    public javax.swing.JTextField acreedoresDiversosTxt;
+    public javax.swing.JTextField acreedoresHipotecariosTxt;
     public javax.swing.JButton addButtom;
-    private javax.swing.JTextField anticipoProveedoresTxt;
-    private javax.swing.JTextField aportacionesTxt;
-    private javax.swing.JTextField bonosPorPagar;
-    private javax.swing.JTextField cajaChicaTxt;
-    private javax.swing.JTextField cajaGeneralTxt;
-    private javax.swing.JTextField capitalSocialTxt;
-    private javax.swing.JTextField creditoComercialTxt;
-    private javax.swing.JTextField depositoGarantiaTxt;
-    private javax.swing.JTextField derechosAutorTxt;
-    private javax.swing.JTextField deudoresDiversosTxt;
-    private javax.swing.JTextField dividendosTxt;
-    private javax.swing.JTextField documentosPorCobrarTxt;
-    private javax.swing.JTextField documentosPorPagarLpTxt;
-    private javax.swing.JTextField documentosPorPagarTxt;
-    private javax.swing.JTextField edificiosTxt;
-    private javax.swing.JTextField entregaYRepartoTxt;
-    private javax.swing.JTextField equipoTransporteTxt;
-    private javax.swing.JTextField fondoAmortizacionTxt;
-    private javax.swing.JTextField fondoOportunidadesTxt;
+    public javax.swing.JTextField anticipoProveedoresTxt;
+    public javax.swing.JTextField aportacionesTxt;
+    public javax.swing.JTextField bonosPorPagar;
+    public javax.swing.JTextField cajaChicaTxt;
+    public javax.swing.JTextField cajaGeneralTxt;
+    public javax.swing.JTextField capitalSocialTxt;
+    public javax.swing.JTextField creditoComercialTxt;
+    public javax.swing.JTextField depositoGarantiaTxt;
+    public javax.swing.JTextField derechosAutorTxt;
+    public javax.swing.JTextField deudoresDiversosTxt;
+    public javax.swing.JTextField dividendosTxt;
+    public javax.swing.JTextField documentosPorCobrarTxt;
+    public javax.swing.JTextField documentosPorPagarLpTxt;
+    public javax.swing.JTextField documentosPorPagarTxt;
+    public javax.swing.JTextField edificiosTxt;
+    public javax.swing.JTextField entregaYRepartoTxt;
+    public javax.swing.JTextField equipoTransporteTxt;
+    public javax.swing.JTextField fondoAmortizacionTxt;
+    public javax.swing.JTextField fondoOportunidadesTxt;
     public javax.swing.JTextField formulaTxt;
-    private javax.swing.JTextField funcionariosTxt;
-    private javax.swing.JTextField gastosConstitucionTxt;
-    private javax.swing.JTextField gastosInstalacionTxt;
-    private javax.swing.JTextField gastosOrganizacion;
-    private javax.swing.JTextField gastosPorPagar;
+    public javax.swing.JTextField funcionariosTxt;
+    public javax.swing.JTextField gastosConstitucionTxt;
+    public javax.swing.JTextField gastosInstalacionTxt;
+    public javax.swing.JTextField gastosOrganizacion;
+    public javax.swing.JTextField gastosPorPagar;
     public javax.swing.JComboBox<String> groupCombo;
-    private javax.swing.JTextField impuestosPagadosAnticipo;
-    private javax.swing.JTextField impuestosRentaTxt;
-    private javax.swing.JTextField inventariosTxt;
-    private javax.swing.JTextField inversionesProcesoTxt;
-    private javax.swing.JTextField inversionesTemporalesTxt;
-    private javax.swing.JTextField ivaPorPagarTxt;
+    public javax.swing.JTextField impuestosPagadosAnticipo;
+    public javax.swing.JTextField impuestosRentaTxt;
+    public javax.swing.JTextField inventariosTxt;
+    public javax.swing.JTextField inversionesProcesoTxt;
+    public javax.swing.JTextField inversionesTemporalesTxt;
+    public javax.swing.JTextField ivaPorPagarTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1639,39 +1637,39 @@ public class ESFFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField maquinariaNoUtilizada;
-    private javax.swing.JTextField maquinariasTxt;
-    private javax.swing.JTextField marcasRegistradasTxt;
-    private javax.swing.JTextField mobiliarioYEquipoTxt;
-    private javax.swing.JTextField mueblesYEnseresTxt;
-    private javax.swing.JTextField nombresComerciales;
-    private javax.swing.JTextField obligacionesTxt;
-    private javax.swing.JTextField papeleriaUtilesTxt;
-    private javax.swing.JTextField patentesTxt;
+    public javax.swing.JTextField maquinariaNoUtilizada;
+    public javax.swing.JTextField maquinariasTxt;
+    public javax.swing.JTextField marcasRegistradasTxt;
+    public javax.swing.JTextField mobiliarioYEquipoTxt;
+    public javax.swing.JTextField mueblesYEnseresTxt;
+    public javax.swing.JTextField nombresComerciales;
+    public javax.swing.JTextField obligacionesTxt;
+    public javax.swing.JTextField papeleriaUtilesTxt;
+    public javax.swing.JTextField patentesTxt;
     public javax.swing.JTextField perdidaTxt;
     public javax.swing.JTextField primaVentasTxt;
-    private javax.swing.JTextField primasTxt;
-    private javax.swing.JTextField propagandaPublicidad;
-    private javax.swing.JTextField proveedoresTxt;
+    public javax.swing.JTextField primasTxt;
+    public javax.swing.JTextField propagandaPublicidad;
+    public javax.swing.JTextField proveedoresTxt;
     public javax.swing.JButton readButton;
-    private javax.swing.JTextField rentasAnticipoTxt;
-    private javax.swing.JTextField rentasPagadasAnticipoTxt;
+    public javax.swing.JTextField rentasAnticipoTxt;
+    public javax.swing.JTextField rentasPagadasAnticipoTxt;
     public javax.swing.JButton saveButtom;
-    private javax.swing.JTextField sueldosPorPagarTxt;
-    private javax.swing.JTextField terrenosNoUtilizadosTxt;
-    private javax.swing.JTextField terrenosTxt;
-    private javax.swing.JTextField totalActivos;
-    private javax.swing.JTextField totalActivosCirculantesTxt;
-    private javax.swing.JTextField totalActivosDiferibles;
-    private javax.swing.JTextField totalActivosDisponibles;
-    private javax.swing.JTextField totalActivosFijosTxt;
-    private javax.swing.JTextField totalActivosNoCirculantesTxt;
+    public javax.swing.JTextField sueldosPorPagarTxt;
+    public javax.swing.JTextField terrenosNoUtilizadosTxt;
+    public javax.swing.JTextField terrenosTxt;
+    public javax.swing.JTextField totalActivos;
+    public javax.swing.JTextField totalActivosCirculantesTxt;
+    public javax.swing.JTextField totalActivosDiferibles;
+    public javax.swing.JTextField totalActivosDisponibles;
+    public javax.swing.JTextField totalActivosFijosTxt;
+    public javax.swing.JTextField totalActivosNoCirculantesTxt;
     private javax.swing.JTextField totalActivosRealizablesTxt;
     public javax.swing.JTextField totalCapitalContribuido;
     public javax.swing.JTextField totalCapitalGanadoTxt;
-    private javax.swing.JTextField totalOtrosActivos;
-    private javax.swing.JTextField totalPasivoCirculanteTxt;
-    private javax.swing.JTextField totalPasivosNoCirculantesTxt;
+    public javax.swing.JTextField totalOtrosActivos;
+    public javax.swing.JTextField totalPasivoCirculanteTxt;
+    public javax.swing.JTextField totalPasivosNoCirculantesTxt;
     public javax.swing.JTextField totalPasivosTxt;
     public javax.swing.JTextField totalPatrimonioTxt;
     public javax.swing.JTextField utilidadTxt;

@@ -12,6 +12,7 @@ import com.grupojcc.finanzasproject.models.razonesFormulas;
  */
 public class razonesFrame extends javax.swing.JInternalFrame {
     razonesFormulas rf;
+    ESFFrame ef;
 
 
     /**
@@ -22,10 +23,23 @@ public class razonesFrame extends javax.swing.JInternalFrame {
         ingresarDatos();
     }
     public void ingresarDatos(){
-        rf = new razonesFormulas();
+        ef = new ESFFrame();
+        rf = new razonesFormulas(); 
+        if(ef.totalActivosCirculantesTxt.getText().isEmpty()){
+            
+        }
+        /*if(ef.totalActivosCirculantesTxt.getText().isEmpty() || ef.totalPasivoCirculanteTxt.getText().isEmpty() ){
+            jTextField1.setText("Valor nulo");
+        }
+        else{
+            rf.setCapitalTrabajoNeto(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()));
+            jTextField1.setText(String.valueOf(rf.getCapitalTrabajoNeto()));
+            //rf.setRazonCirculante(Double.parseDouble(ef.totalActivosCirculantesTxt.getText()), Double.parseDouble(ef.totalPasivoCirculanteTxt.getText()));
+        }
+        
         jTextField1.setText(String.valueOf(rf.getCapitalTrabajoNeto()) + "veces");
         jTextField2.setText(String.valueOf(rf.getRazonCirculante()) + "veces");
-        jTextField3.setText(String.valueOf(rf.getRazonRapida()) + "veces");
+        jTextField3.setText(String.valueOf(rf.getRazonRapida()) + "veces");*/
         
     }
 
