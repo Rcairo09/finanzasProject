@@ -4,7 +4,16 @@
  */
 package com.grupojcc.finanzasproject.models;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -79,6 +88,7 @@ public class ESFModel implements Serializable{
     private double capitalSocial;
     private double aportacions;
     private double primaVentaAcciones;
+    private double donaciones;
     private double totalCapitalContribuido;
     private double utilidadDelEjercicio;
     private double perdidaDelEjercicio;
@@ -87,13 +97,13 @@ public class ESFModel implements Serializable{
     private double totalPatrimonio;
     private double formula;
 
-    public ESFModel(double cajaGeneral, double cajaChica, double fondoOportunidades, double Bancos, double inversionesTemporales, double totalActivosDisponibles, double Clientes, double documentosPorCobrar, double deudoresDiversos, double funcionariosYEmpleados, double ivaAcreditable, double Inventarios, double anticipoProveedores, double totalActivosRealizables, double totalActivosCirculantes, double Terrenos, double Edificios, double Maquinarias, double MobiliarioYEquipo, double mueblesYEnseres, double equipoTransporte, double equipoEntregaYReparto, double totalActivosFijos, double derechosAutor, double Patentes, double marcasRegistradas, double nombresComerciales, double creditoComercial, double gastosConstitucion, double gastosOrganizacion, double gastosInstalacion, double papeleriaYUtiles, double propagandaYPublicidad, double primasYSeguros, double rentasAnticipo, double impuestosAnticipo, double totalActivosDiferibles, double fondoAmortizacion, double depositoEnGarantia, double inversionesEnProceso, double terrenosNoUtilizados, double maquinariaNoUtilizada, double totalOtrosActivos, double totalActivosNoCirculantes, double totalActivos, double Proveedores, double documentosPorPagar, double acreedoresDiversos, double dividendosPorPagar, double ivaPorPagar, double impuestosSobreRenta, double interesesPorPagar, double sueldosPorPagar, double gastosPorPagar, double totalPasivosCirculantes, double acreedoresHipotecarios, double documentosPorPagarLP, double obligacionesACirculacion, double bonosPorPagar, double rentasCobradasPorAnticipo, double interesesCobradosPorAnticipo, double totalPasivosNoCirculantes, double totalPasivos, double capitalSocial, double aportacions, double primaVentaAcciones, double totalCapitalContribuido, double utilidadDelEjercicio, double perdidaDelEjercicio, double utilidadesRetenidas, double totalCapitalGanado, double totalPatrimonio, double formula) {
+    public ESFModel(double cajaGeneral, double cajaChica, double fondoOportunidades, double Bancos, double inversionesTemporales, double Clientes, double documentosPorCobrar, double deudoresDiversos, double funcionariosYEmpleados, double ivaAcreditable, double Inventarios, double anticipoProveedores, double Terrenos, double Edificios, double Maquinarias, double MobiliarioYEquipo, double mueblesYEnseres, double equipoTransporte, double equipoEntregaYReparto, double derechosAutor, double Patentes, double marcasRegistradas, double nombresComerciales, double creditoComercial, double gastosConstitucion, double gastosOrganizacion, double gastosInstalacion, double papeleriaYUtiles, double propagandaYPublicidad, double primasYSeguros, double rentasAnticipo, double impuestosAnticipo, double fondoAmortizacion, double depositoEnGarantia, double inversionesEnProceso, double terrenosNoUtilizados, double maquinariaNoUtilizada, double Proveedores, double documentosPorPagar, double acreedoresDiversos, double dividendosPorPagar, double ivaPorPagar, double impuestosSobreRenta, double interesesPorPagar, double sueldosPorPagar, double gastosPorPagar, double acreedoresHipotecarios, double documentosPorPagarLP, double obligacionesACirculacion, double bonosPorPagar, double rentasCobradasPorAnticipo, double interesesCobradosPorAnticipo, double capitalSocial, double aportacions, double primaVentaAcciones, double donaciones, double utilidadDelEjercicio, double perdidaDelEjercicio, double utilidadesRetenidas) {
+    
         this.cajaGeneral = cajaGeneral;
         this.cajaChica = cajaChica;
         this.fondoOportunidades = fondoOportunidades;
         this.Bancos = Bancos;
         this.inversionesTemporales = inversionesTemporales;
-        this.totalActivosDisponibles = totalActivosDisponibles;
         this.Clientes = Clientes;
         this.documentosPorCobrar = documentosPorCobrar;
         this.deudoresDiversos = deudoresDiversos;
@@ -101,8 +111,6 @@ public class ESFModel implements Serializable{
         this.ivaAcreditable = ivaAcreditable;
         this.Inventarios = Inventarios;
         this.anticipoProveedores = anticipoProveedores;
-        this.totalActivosRealizables = totalActivosRealizables;
-        this.totalActivosCirculantes = totalActivosCirculantes;
         this.Terrenos = Terrenos;
         this.Edificios = Edificios;
         this.Maquinarias = Maquinarias;
@@ -110,7 +118,6 @@ public class ESFModel implements Serializable{
         this.mueblesYEnseres = mueblesYEnseres;
         this.equipoTransporte = equipoTransporte;
         this.equipoEntregaYReparto = equipoEntregaYReparto;
-        this.totalActivosFijos = totalActivosFijos;
         this.derechosAutor = derechosAutor;
         this.Patentes = Patentes;
         this.marcasRegistradas = marcasRegistradas;
@@ -124,15 +131,11 @@ public class ESFModel implements Serializable{
         this.primasYSeguros = primasYSeguros;
         this.rentasAnticipo = rentasAnticipo;
         this.impuestosAnticipo = impuestosAnticipo;
-        this.totalActivosDiferibles = totalActivosDiferibles;
         this.fondoAmortizacion = fondoAmortizacion;
         this.depositoEnGarantia = depositoEnGarantia;
         this.inversionesEnProceso = inversionesEnProceso;
         this.terrenosNoUtilizados = terrenosNoUtilizados;
         this.maquinariaNoUtilizada = maquinariaNoUtilizada;
-        this.totalOtrosActivos = totalOtrosActivos;
-        this.totalActivosNoCirculantes = totalActivosNoCirculantes;
-        this.totalActivos = totalActivos;
         this.Proveedores = Proveedores;
         this.documentosPorPagar = documentosPorPagar;
         this.acreedoresDiversos = acreedoresDiversos;
@@ -142,32 +145,29 @@ public class ESFModel implements Serializable{
         this.interesesPorPagar = interesesPorPagar;
         this.sueldosPorPagar = sueldosPorPagar;
         this.gastosPorPagar = gastosPorPagar;
-        this.totalPasivosCirculantes = totalPasivosCirculantes;
         this.acreedoresHipotecarios = acreedoresHipotecarios;
         this.documentosPorPagarLP = documentosPorPagarLP;
         this.obligacionesACirculacion = obligacionesACirculacion;
         this.bonosPorPagar = bonosPorPagar;
         this.rentasCobradasPorAnticipo = rentasCobradasPorAnticipo;
         this.interesesCobradosPorAnticipo = interesesCobradosPorAnticipo;
-        this.totalPasivosNoCirculantes = totalPasivosNoCirculantes;
-        this.totalPasivos = totalPasivos;
         this.capitalSocial = capitalSocial;
         this.aportacions = aportacions;
         this.primaVentaAcciones = primaVentaAcciones;
-        this.totalCapitalContribuido = totalCapitalContribuido;
+        this.donaciones = donaciones;
         this.utilidadDelEjercicio = utilidadDelEjercicio;
         this.perdidaDelEjercicio = perdidaDelEjercicio;
         this.utilidadesRetenidas = utilidadesRetenidas;
-        this.totalCapitalGanado = totalCapitalGanado;
-        this.totalPatrimonio = totalPatrimonio;
-        this.formula = formula;
+
+    }
+
+    public ESFModel() {
+        
     }
 
     
-    
-    
-    
-    
+
+   
     
     public double getCajaGeneral() {
         return cajaGeneral;
@@ -564,7 +564,7 @@ public class ESFModel implements Serializable{
     }
 
     public double getTotalActivos() {
-        totalActivos = (totalActivosNoCirculantes + totalActivosNoCirculantes);
+        totalActivos = (totalActivosCirculantes + totalActivosNoCirculantes);
         return totalActivos;
     }
 
@@ -646,7 +646,7 @@ public class ESFModel implements Serializable{
     }
 
     public double getTotalPasivosCirculantes() {
-        totalPasivosCirculantes = (Proveedores + acreedoresDiversos + dividendosPorPagar + ivaPorPagar + impuestosSobreRenta + interesesPorPagar + sueldosPorPagar + gastosPorPagar);
+        totalPasivosCirculantes = (Proveedores + documentosPorPagar + acreedoresDiversos + dividendosPorPagar + ivaPorPagar + impuestosSobreRenta + interesesPorPagar + sueldosPorPagar + gastosPorPagar);
         return totalPasivosCirculantes;
     }
 
@@ -760,15 +760,27 @@ public class ESFModel implements Serializable{
         this.primaVentaAcciones = primaVentaAcciones;
     }
 
+    public double getDonaciones() {
+        return donaciones;
+    }
+
+    public void setDonaciones(double donaciones) {
+        this.donaciones = donaciones;
+    }
+
+    
+    
+    
     public double getTotalCapitalContribuido() {
-        totalCapitalContribuido = (capitalSocial + aportacions + primaVentaAcciones);
+        totalCapitalContribuido = (capitalSocial + aportacions + primaVentaAcciones + donaciones);
         return totalCapitalContribuido;
     }
 
-    public void setTotalCapitalContribuido(double capitalSocial, double aportacions, double primaVentaAcciones) {
+    public void setTotalCapitalContribuido(double capitalSocial, double aportacions, double primaVentaAcciones, double donaciones) {
         this.capitalSocial = capitalSocial;
         this.aportacions = aportacions;
         this.primaVentaAcciones = primaVentaAcciones;
+        this.donaciones = donaciones;
     }
 
     public double getUtilidadDelEjercicio() {
@@ -828,7 +840,35 @@ public class ESFModel implements Serializable{
     
     
             
-   
-    
+   public void save(File file, BalanceArreglo balance) throws IOException {
+        if (file != null) {
+            try {
+                ObjectOutputStream a = new ObjectOutputStream(new FileOutputStream(file));
+                a.writeObject(balance);
+                a.flush();
+                a.close();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ESFModel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    public BalanceArreglo read(File file) throws IOException {
+        BalanceArreglo balance = null;
+        try {
+            ObjectInputStream j = new ObjectInputStream(new FileInputStream(file));
+            try {
+                balance = (BalanceArreglo) j.readObject();
+                j.close();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ESFModel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ESFModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return balance;
+
+    }
     
 }

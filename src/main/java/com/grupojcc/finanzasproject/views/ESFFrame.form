@@ -2,6 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
+    <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
     <Property name="resizable" type="boolean" value="true"/>
@@ -28,12 +29,14 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" pref="1034" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="addButtom" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="saveButtom" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -55,29 +58,26 @@
                               <Component id="SubSubGroupItem" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                               <Component id="SubSubGroupCombo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="294" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="addButtom" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="saveButtom" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                              <EmptySpace pref="269" max="32767" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Component id="AccountCombo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="448" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="readButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jScrollPane1" pref="1347" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -109,7 +109,7 @@
                   <Component id="saveButtom" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="1405" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="1426" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -141,6 +141,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="MontoTxt">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="MontoTxtKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -222,420 +225,440 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="impuestosPagadosAnticipo" min="-2" pref="60" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jTextField1" min="-2" pref="0" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="primasTxt" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="propagandaPublicidad" min="-2" pref="58" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="gastosOrganizacion" max="32767" attributes="0"/>
-                                                  <Component id="creditoComercialTxt" pref="58" max="32767" attributes="0"/>
-                                                  <Component id="nombresComerciales" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="gastosConstitucionTxt" max="32767" attributes="0"/>
-                                                  <Component id="gastosInstalacionTxt" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="totalActivosDiferibles" pref="90" max="32767" attributes="0"/>
+                                                  <Component id="totalOtrosActivos" max="32767" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="papeleriaUtilesTxt" min="-2" pref="55" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="rentasPagadasAnticipoTxt" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="impuestosPagadosAnticipo" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="totalActivos" min="-2" pref="62" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                                          <Component id="maquinariaNoUtilizada" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                                          <Component id="terrenosNoUtilizadosTxt" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                                          <Component id="inversionesProcesoTxt" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="depositoGarantiaTxt" min="-2" pref="54" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel53" min="-2" pref="145" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="fondoAmortizacionTxt" min="-2" pref="43" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="totalActivosNoCirculantesTxt" min="-2" pref="62" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="407" max="-2" attributes="0"/>
-                                                  <Component id="totalActivosCirculantesTxt" min="-2" pref="61" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="InteresesAnticipadosTxt" min="-2" pref="67" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="capitalSocialTxt" alignment="1" pref="67" max="32767" attributes="0"/>
-                                              <Component id="aportacionesTxt" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="utilidadesRetenidasTxt" alignment="0" pref="65" max="32767" attributes="0"/>
-                                              <Component id="perdidaTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="utilidadTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="primaVentasTxt" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="totalActivosFijosTxt" pref="61" max="32767" attributes="0"/>
-                                              <Component id="totalActivosRealizablesTxt" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                              <Group type="102" alignment="1" attributes="0">
+                                                                                  <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                                              </Group>
+                                                                              <Group type="102" alignment="0" attributes="0">
+                                                                                  <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                                                              </Group>
+                                                                          </Group>
+                                                                          <Group type="102" alignment="0" attributes="0">
+                                                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                                                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                                                                          </Group>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="0" attributes="0">
+                                                                          <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="funcionariosTxt" pref="58" max="32767" attributes="0"/>
+                                                          <Component id="IvaAcreditableTxt" max="32767" attributes="0"/>
+                                                          <Component id="inventariosTxt" max="32767" attributes="0"/>
+                                                          <Component id="anticipoProveedoresTxt" max="32767" attributes="0"/>
+                                                          <Component id="terrenosTxt" max="32767" attributes="0"/>
+                                                          <Component id="edificiosTxt" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                              <Group type="102" alignment="1" attributes="0">
+                                                                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="maquinariasTxt" pref="58" max="32767" attributes="0"/>
+                                                          <Component id="mobiliarioYEquipoTxt" max="32767" attributes="0"/>
+                                                          <Component id="mueblesYEnseresTxt" max="32767" attributes="0"/>
+                                                          <Component id="equipoTransporteTxt" alignment="1" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                  <Group type="102" alignment="1" attributes="0">
+                                                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="patentesTxt" max="32767" attributes="0"/>
+                                                          <Component id="derechosAutorTxt" max="32767" attributes="0"/>
+                                                          <Component id="entregaYRepartoTxt" alignment="0" pref="58" max="32767" attributes="0"/>
+                                                          <Component id="marcasRegistradasTxt" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="cajaGeneralTxt" max="32767" attributes="0"/>
+                                                          <Component id="deudoresDiversosTxt" max="32767" attributes="0"/>
+                                                          <Component id="fondoOportunidadesTxt" alignment="0" pref="56" max="32767" attributes="0"/>
+                                                          <Component id="cajaChicaTxt" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="BancosTxt" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="inversionesTemporalesTxt" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="ClientesTxt" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="documentosPorCobrarTxt" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="totalActivosFijosTxt" min="-2" pref="82" max="-2" attributes="0"/>
+                                                      <Component id="totalActivosRealizablesTxt" min="-2" pref="82" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                                       <Group type="102" attributes="0">
                                                           <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="totalActivosDisponibles" alignment="0" max="32767" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-                                                  <Component id="totalActivosDisponibles" pref="61" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="primasTxt" min="-2" pref="60" max="-2" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="totalActivosDiferibles" pref="62" max="32767" attributes="0"/>
-                                              <Component id="totalOtrosActivos" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                                  <Group type="102" alignment="1" attributes="0">
-                                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                              </Group>
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                                                      </Group>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="propagandaPublicidadTxt" min="-2" pref="58" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                          <Component id="gastosOrganizacionTxt" max="32767" attributes="0"/>
+                                                          <Component id="creditoComercialTxt" pref="58" max="32767" attributes="0"/>
+                                                          <Component id="nombresComercialesTxt" alignment="1" max="32767" attributes="0"/>
+                                                          <Component id="gastosConstitucionTxt" max="32767" attributes="0"/>
+                                                          <Component id="gastosInstalacionTxt" max="32767" attributes="0"/>
+                                                      </Group>
                                                   </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="funcionariosTxt" pref="58" max="32767" attributes="0"/>
-                                              <Component id="IvaAcreditableTxt" max="32767" attributes="0"/>
-                                              <Component id="inventariosTxt" max="32767" attributes="0"/>
-                                              <Component id="anticipoProveedoresTxt" max="32767" attributes="0"/>
-                                              <Component id="terrenosTxt" max="32767" attributes="0"/>
-                                              <Component id="edificiosTxt" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="papeleriaUtilesTxt" min="-2" pref="55" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="rentasPagadasAnticipoTxt" min="-2" pref="60" max="-2" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="maquinariasTxt" pref="58" max="32767" attributes="0"/>
-                                              <Component id="mobiliarioYEquipoTxt" max="32767" attributes="0"/>
-                                              <Component id="mueblesYEnseresTxt" max="32767" attributes="0"/>
-                                              <Component id="equipoTransporteTxt" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <EmptySpace pref="335" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel93" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="totalPatrimonioTxt" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="bonosPorPagarTxt" max="32767" attributes="0"/>
+                                                                  <Component id="documentosPorPagarLpTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                                                  <Component id="obligacionesTxt" alignment="0" pref="66" max="32767" attributes="0"/>
+                                                              </Group>
+                                                              <Component id="perdidaTxt" alignment="1" max="32767" attributes="0"/>
+                                                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="InteresesAnticipadosTxt" pref="67" max="32767" attributes="0"/>
+                                                                  <Component id="capitalSocialTxt" alignment="0" pref="67" max="32767" attributes="0"/>
+                                                                  <Component id="aportacionesTxt" alignment="0" pref="67" max="32767" attributes="0"/>
+                                                                  <Component id="primaVentasTxt" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                                                  <Component id="rentasAnticipoTxt" alignment="0" max="32767" attributes="0"/>
+                                                              </Group>
+                                                              <Group type="102" alignment="1" attributes="0">
+                                                                  <Component id="donacionesTxt" min="-2" pref="68" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <Component id="utilidadTxt" max="32767" attributes="0"/>
+                                                              <Component id="utilidadesRetenidasTxt" alignment="0" max="32767" attributes="0"/>
+                                                          </Group>
                                                           <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
+                                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                                      <Group type="102" attributes="0">
+                                                                          <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="acreedoresHipotecariosTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="gastosPorPagarTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel70" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="sueldosPorPagarTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="InteresesTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="impuestosRentaTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel67" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="ivaPorPagarTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="dividendosTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="1" attributes="0">
+                                                                          <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="acreedoresDiversosTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="0" attributes="0">
+                                                                          <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace max="32767" attributes="0"/>
+                                                                          <Component id="documentosPorPagarTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Group type="102" alignment="0" attributes="0">
+                                                                          <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
+                                                                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                                                          <Component id="proveedoresTxt" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <Component id="jLabel72" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                      <Component id="jLabel81" min="-2" pref="91" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel80" min="-2" pref="165" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel83" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel85" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel86" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel95" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel79" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel78" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel77" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel76" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="jLabel75" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="1" attributes="0">
+                                                                      <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel92" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="jLabel74" min="-2" pref="131" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel94" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="formulaTxt" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="totalPasivoCirculanteTxt" min="-2" pref="89" max="-2" attributes="0"/>
+                                                          <Component id="totalPasivosNoCirculantesTxt" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                                          <Component id="totalCapitalContribuido" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                                          <Component id="totalCapitalGanadoTxt" min="-2" pref="89" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel53" min="-2" pref="145" max="-2" attributes="0"/>
                                                               <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="fondoAmortizacionTxt" min="-2" pref="53" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="depositoGarantiaTxt" pref="83" max="32767" attributes="0"/>
+                                                                  <Component id="inversionesProcesoTxt" max="32767" attributes="0"/>
+                                                                  <Component id="terrenosNoUtilizadosTxt" max="32767" attributes="0"/>
+                                                                  <Component id="maquinariaNoUtilizadaTxt" max="32767" attributes="0"/>
+                                                              </Group>
                                                           </Group>
+                                                          <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                                      <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="totalActivosNoCirculantesTxt" pref="86" max="32767" attributes="0"/>
+                                                  <Component id="totalActivos" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="patentesTxt" max="32767" attributes="0"/>
-                                              <Component id="derechosAutorTxt" max="32767" attributes="0"/>
-                                              <Component id="entregaYRepartoTxt" alignment="0" pref="58" max="32767" attributes="0"/>
-                                              <Component id="marcasRegistradasTxt" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="totalActivosCirculantesTxt" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="cajaGeneralTxt" max="32767" attributes="0"/>
-                                              <Component id="deudoresDiversosTxt" max="32767" attributes="0"/>
-                                              <Component id="fondoOportunidadesTxt" alignment="0" pref="56" max="32767" attributes="0"/>
-                                              <Component id="cajaChicaTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="BancosTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="inversionesTemporalesTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="ClientesTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="documentosPorCobrarTxt" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rentasAnticipoTxt" min="-2" pref="81" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel72" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel83" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel84" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel85" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel86" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel90" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel91" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel92" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel94" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel76" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel77" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="obligacionesTxt" pref="82" max="32767" attributes="0"/>
-                                          <Component id="bonosPorPagar" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="documentosPorPagarLpTxt" pref="63" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel64" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel65" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel67" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel63" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel69" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel70" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel71" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabel74" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="documentosPorPagarTxt" max="32767" attributes="0"/>
-                                              <Component id="acreedoresDiversosTxt" max="32767" attributes="0"/>
-                                              <Component id="dividendosTxt" max="32767" attributes="0"/>
-                                              <Component id="ivaPorPagarTxt" max="32767" attributes="0"/>
-                                              <Component id="impuestosRentaTxt" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="proveedoresTxt" alignment="0" pref="66" max="32767" attributes="0"/>
-                                              <Component id="InteresesTxt" max="32767" attributes="0"/>
-                                              <Component id="sueldosPorPagarTxt" max="32767" attributes="0"/>
-                                              <Component id="gastosPorPagar" max="32767" attributes="0"/>
-                                              <Component id="acreedoresHipotecariosTxt" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="totalPasivosTxt" min="-2" pref="78" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="totalCapitalContribuido" pref="89" max="32767" attributes="0"/>
-                                          <Component id="totalCapitalGanadoTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="totalPasivosNoCirculantesTxt" max="32767" attributes="0"/>
-                                          <Component id="totalPasivoCirculanteTxt" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="104" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="totalPatrimonioTxt" min="-2" pref="78" max="-2" attributes="0"/>
-                                          <Component id="totalPasivosTxt" min="-2" pref="78" max="-2" attributes="0"/>
-                                          <Component id="formulaTxt" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -650,13 +673,19 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel61" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -664,11 +693,7 @@
                                   <Component id="cajaGeneralTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="proveedoresTxt" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -691,7 +716,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="fondoOportunidadesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="dividendosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -709,24 +734,32 @@
                           <Component id="impuestosRentaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalActivosDisponibles" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="InteresesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="InteresesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="totalActivosDisponibles" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="sueldosPorPagarTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="sueldosPorPagarTxt" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel70" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ClientesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gastosPorPagar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="gastosPorPagarTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ClientesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -735,43 +768,58 @@
                           <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="totalPasivoCirculanteTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="deudoresDiversosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deudoresDiversosTxt" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="funcionariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IvaAcreditableTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="inventariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="obligacionesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="acreedoresHipotecariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="documentosPorPagarLpTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="funcionariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="acreedoresHipotecariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="IvaAcreditableTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="documentosPorPagarLpTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="inventariosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="obligacionesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="anticipoProveedoresTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="anticipoProveedoresTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bonosPorPagar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="bonosPorPagarTxt" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -788,200 +836,233 @@
                           <Component id="InteresesAnticipadosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalPasivosNoCirculantesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalPasivosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="terrenosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="edificiosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="maquinariasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="capitalSocialTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="totalPasivosNoCirculantesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="totalPasivosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="terrenosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="edificiosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="maquinariasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="capitalSocialTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mobiliarioYEquipoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="aportacionesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel85" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mueblesYEnseresTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="primaVentasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="equipoTransporteTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel95" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="donacionesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="entregaYRepartoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalCapitalContribuido" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalActivosFijosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel89" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="utilidadTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="patentesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="utilidadesRetenidasTxt" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="derechosAutorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="perdidaTxt" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                                                  <Component id="jLabel90" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="marcasRegistradasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="nombresComercialesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="creditoComercialTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="totalCapitalGanadoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel93" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="totalPatrimonioTxt" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="formulaTxt" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gastosConstitucionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gastosOrganizacionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gastosInstalacionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="papeleriaUtilesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="propagandaPublicidadTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="primasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rentasPagadasAnticipoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="impuestosPagadosAnticipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalActivosDiferibles" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel53" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <Component id="fondoAmortizacionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="depositoGarantiaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="inversionesProcesoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="terrenosNoUtilizadosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="maquinariaNoUtilizadaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalOtrosActivos" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalActivosNoCirculantesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="totalActivos" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="mobiliarioYEquipoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="aportacionesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="mueblesYEnseresTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="primaVentasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="equipoTransporteTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalCapitalContribuido" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="entregaYRepartoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalActivosFijosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel89" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="utilidadTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel90" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="perdidaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="derechosAutorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="utilidadesRetenidasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="patentesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalCapitalGanadoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="marcasRegistradasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalPatrimonioTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombresComerciales" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel94" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="formulaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="creditoComercialTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gastosConstitucionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gastosOrganizacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gastosInstalacionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="papeleriaUtilesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="propagandaPublicidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="primasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rentasPagadasAnticipoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="impuestosPagadosAnticipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalActivosDiferibles" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel53" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="fondoAmortizacionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="depositoGarantiaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inversionesProcesoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="terrenosNoUtilizadosTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="maquinariaNoUtilizada" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalOtrosActivos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalActivosNoCirculantesTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="totalActivos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1270,6 +1351,7 @@
             <Component class="javax.swing.JTextField" name="cajaChicaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1278,6 +1360,7 @@
             <Component class="javax.swing.JTextField" name="fondoOportunidadesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1286,6 +1369,7 @@
             <Component class="javax.swing.JTextField" name="BancosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1294,6 +1378,7 @@
             <Component class="javax.swing.JTextField" name="inversionesTemporalesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1302,6 +1387,7 @@
             <Component class="javax.swing.JTextField" name="ClientesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1310,6 +1396,7 @@
             <Component class="javax.swing.JTextField" name="documentosPorCobrarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1318,6 +1405,7 @@
             <Component class="javax.swing.JTextField" name="deudoresDiversosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1326,6 +1414,7 @@
             <Component class="javax.swing.JTextField" name="funcionariosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1334,6 +1423,7 @@
             <Component class="javax.swing.JTextField" name="IvaAcreditableTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1342,6 +1432,7 @@
             <Component class="javax.swing.JTextField" name="inventariosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1350,6 +1441,7 @@
             <Component class="javax.swing.JTextField" name="anticipoProveedoresTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1358,11 +1450,13 @@
             <Component class="javax.swing.JTextField" name="totalActivosRealizablesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="terrenosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1371,6 +1465,7 @@
             <Component class="javax.swing.JTextField" name="edificiosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1379,6 +1474,7 @@
             <Component class="javax.swing.JTextField" name="maquinariasTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1387,6 +1483,7 @@
             <Component class="javax.swing.JTextField" name="mobiliarioYEquipoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1395,6 +1492,7 @@
             <Component class="javax.swing.JTextField" name="mueblesYEnseresTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1403,6 +1501,7 @@
             <Component class="javax.swing.JTextField" name="equipoTransporteTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1411,6 +1510,7 @@
             <Component class="javax.swing.JTextField" name="entregaYRepartoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1419,6 +1519,7 @@
             <Component class="javax.swing.JTextField" name="derechosAutorTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1427,6 +1528,7 @@
             <Component class="javax.swing.JTextField" name="patentesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1435,14 +1537,16 @@
             <Component class="javax.swing.JTextField" name="marcasRegistradasTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="nombresComerciales">
+            <Component class="javax.swing.JTextField" name="nombresComercialesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1451,6 +1555,7 @@
             <Component class="javax.swing.JTextField" name="creditoComercialTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1459,14 +1564,16 @@
             <Component class="javax.swing.JTextField" name="gastosConstitucionTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="gastosOrganizacion">
+            <Component class="javax.swing.JTextField" name="gastosOrganizacionTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1475,6 +1582,7 @@
             <Component class="javax.swing.JTextField" name="cajaGeneralTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1483,14 +1591,16 @@
             <Component class="javax.swing.JTextField" name="gastosInstalacionTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="propagandaPublicidad">
+            <Component class="javax.swing.JTextField" name="propagandaPublicidadTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1499,6 +1609,7 @@
             <Component class="javax.swing.JTextField" name="primasTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1509,6 +1620,7 @@
             <Component class="javax.swing.JTextField" name="papeleriaUtilesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1517,6 +1629,7 @@
             <Component class="javax.swing.JTextField" name="rentasPagadasAnticipoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1525,14 +1638,7 @@
             <Component class="javax.swing.JTextField" name="impuestosPagadosAnticipo">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="totalActivosDiferibles">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1541,6 +1647,7 @@
             <Component class="javax.swing.JTextField" name="totalActivosCirculantesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1549,14 +1656,7 @@
             <Component class="javax.swing.JTextField" name="totalActivosFijosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="totalActivosDisponibles">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1565,6 +1665,7 @@
             <Component class="javax.swing.JTextField" name="fondoAmortizacionTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1573,6 +1674,7 @@
             <Component class="javax.swing.JTextField" name="depositoGarantiaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1581,6 +1683,7 @@
             <Component class="javax.swing.JTextField" name="inversionesProcesoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1589,14 +1692,16 @@
             <Component class="javax.swing.JTextField" name="terrenosNoUtilizadosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="maquinariaNoUtilizada">
+            <Component class="javax.swing.JTextField" name="maquinariaNoUtilizadaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1605,14 +1710,7 @@
             <Component class="javax.swing.JTextField" name="totalOtrosActivos">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="totalActivos">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1621,6 +1719,7 @@
             <Component class="javax.swing.JTextField" name="totalActivosNoCirculantesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1649,6 +1748,7 @@
             <Component class="javax.swing.JTextField" name="proveedoresTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1657,6 +1757,7 @@
             <Component class="javax.swing.JTextField" name="documentosPorPagarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1670,6 +1771,7 @@
             <Component class="javax.swing.JTextField" name="acreedoresDiversosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1683,6 +1785,7 @@
             <Component class="javax.swing.JTextField" name="dividendosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1696,6 +1799,7 @@
             <Component class="javax.swing.JTextField" name="ivaPorPagarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1709,6 +1813,7 @@
             <Component class="javax.swing.JTextField" name="impuestosRentaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1722,6 +1827,7 @@
             <Component class="javax.swing.JTextField" name="InteresesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1735,6 +1841,7 @@
             <Component class="javax.swing.JTextField" name="sueldosPorPagarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1745,9 +1852,10 @@
                 <Property name="text" type="java.lang.String" value="Gastos por pagar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="gastosPorPagar">
+            <Component class="javax.swing.JTextField" name="gastosPorPagarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1771,6 +1879,7 @@
             <Component class="javax.swing.JTextField" name="acreedoresHipotecariosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1784,6 +1893,7 @@
             <Component class="javax.swing.JTextField" name="documentosPorPagarLpTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1797,6 +1907,7 @@
             <Component class="javax.swing.JTextField" name="obligacionesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1807,9 +1918,10 @@
                 <Property name="text" type="java.lang.String" value="Bonos por pagar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="bonosPorPagar">
+            <Component class="javax.swing.JTextField" name="bonosPorPagarTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1823,6 +1935,7 @@
             <Component class="javax.swing.JTextField" name="rentasAnticipoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1836,6 +1949,7 @@
             <Component class="javax.swing.JTextField" name="InteresesAnticipadosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1849,6 +1963,7 @@
             <Component class="javax.swing.JTextField" name="totalPasivosNoCirculantesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1862,6 +1977,7 @@
             <Component class="javax.swing.JTextField" name="totalPasivoCirculanteTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1890,6 +2006,7 @@
             <Component class="javax.swing.JTextField" name="aportacionesTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1903,6 +2020,7 @@
             <Component class="javax.swing.JTextField" name="capitalSocialTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1911,6 +2029,7 @@
             <Component class="javax.swing.JTextField" name="primaVentasTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1924,6 +2043,7 @@
             <Component class="javax.swing.JTextField" name="totalCapitalContribuido">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1942,6 +2062,7 @@
             <Component class="javax.swing.JTextField" name="utilidadTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1955,6 +2076,7 @@
             <Component class="javax.swing.JTextField" name="perdidaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1968,6 +2090,7 @@
             <Component class="javax.swing.JTextField" name="utilidadesRetenidasTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1981,6 +2104,7 @@
             <Component class="javax.swing.JTextField" name="totalCapitalGanadoTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1994,6 +2118,7 @@
             <Component class="javax.swing.JTextField" name="totalPasivosTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2002,6 +2127,7 @@
             <Component class="javax.swing.JTextField" name="totalPatrimonioTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -2015,6 +2141,48 @@
             <Component class="javax.swing.JTextField" name="formulaTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="totalActivosDiferibles">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="totalActivos">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel95">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Donaciones"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="donacionesTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="totalActivosDisponibles">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

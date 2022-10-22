@@ -4,9 +4,14 @@
  */
 package com.grupojcc.finanzasproject.views;
 
+import com.grupojcc.finanzasproject.controllers.BalanceController;
+import com.grupojcc.finanzasproject.models.BalanceArreglo;
+import com.grupojcc.finanzasproject.models.ESFModel;
 import java.awt.event.ItemEvent;
+import static java.awt.image.ImageObserver.HEIGHT;
 import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,8 +24,12 @@ public class ESFFrame extends javax.swing.JInternalFrame {
      */
     public ESFFrame() {
         initComponents();
+        inicio();
         
     }
+            BalanceArreglo ba = new BalanceArreglo();
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,29 +130,26 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         derechosAutorTxt = new javax.swing.JTextField();
         patentesTxt = new javax.swing.JTextField();
         marcasRegistradasTxt = new javax.swing.JTextField();
-        nombresComerciales = new javax.swing.JTextField();
+        nombresComercialesTxt = new javax.swing.JTextField();
         creditoComercialTxt = new javax.swing.JTextField();
         gastosConstitucionTxt = new javax.swing.JTextField();
-        gastosOrganizacion = new javax.swing.JTextField();
+        gastosOrganizacionTxt = new javax.swing.JTextField();
         cajaGeneralTxt = new javax.swing.JTextField();
         gastosInstalacionTxt = new javax.swing.JTextField();
-        propagandaPublicidad = new javax.swing.JTextField();
+        propagandaPublicidadTxt = new javax.swing.JTextField();
         primasTxt = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         papeleriaUtilesTxt = new javax.swing.JTextField();
         rentasPagadasAnticipoTxt = new javax.swing.JTextField();
         impuestosPagadosAnticipo = new javax.swing.JTextField();
-        totalActivosDiferibles = new javax.swing.JTextField();
         totalActivosCirculantesTxt = new javax.swing.JTextField();
         totalActivosFijosTxt = new javax.swing.JTextField();
-        totalActivosDisponibles = new javax.swing.JTextField();
         fondoAmortizacionTxt = new javax.swing.JTextField();
         depositoGarantiaTxt = new javax.swing.JTextField();
         inversionesProcesoTxt = new javax.swing.JTextField();
         terrenosNoUtilizadosTxt = new javax.swing.JTextField();
-        maquinariaNoUtilizada = new javax.swing.JTextField();
+        maquinariaNoUtilizadaTxt = new javax.swing.JTextField();
         totalOtrosActivos = new javax.swing.JTextField();
-        totalActivos = new javax.swing.JTextField();
         totalActivosNoCirculantesTxt = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
@@ -164,7 +170,7 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel70 = new javax.swing.JLabel();
         sueldosPorPagarTxt = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
-        gastosPorPagar = new javax.swing.JTextField();
+        gastosPorPagarTxt = new javax.swing.JTextField();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -174,7 +180,7 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel76 = new javax.swing.JLabel();
         obligacionesTxt = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
-        bonosPorPagar = new javax.swing.JTextField();
+        bonosPorPagarTxt = new javax.swing.JTextField();
         jLabel78 = new javax.swing.JLabel();
         rentasAnticipoTxt = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
@@ -207,10 +213,16 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         totalPatrimonioTxt = new javax.swing.JTextField();
         jLabel94 = new javax.swing.JLabel();
         formulaTxt = new javax.swing.JTextField();
+        totalActivosDiferibles = new javax.swing.JTextField();
+        totalActivos = new javax.swing.JTextField();
+        jLabel95 = new javax.swing.JLabel();
+        donacionesTxt = new javax.swing.JTextField();
+        totalActivosDisponibles = new javax.swing.JTextField();
         addButtom = new javax.swing.JButton();
         readButton = new javax.swing.JButton();
         saveButtom = new javax.swing.JButton();
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -225,6 +237,12 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel4.setText("Cuenta");
 
         jLabel5.setText("Monto ");
+
+        MontoTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                MontoTxtKeyTyped(evt);
+            }
+        });
 
         groupCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Activo", "Pasivo", "Patrimonio" }));
         groupCombo.addItemListener(new java.awt.event.ItemListener() {
@@ -360,94 +378,130 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel60.setText("Total Activos");
 
         cajaChicaTxt.setEditable(false);
+        cajaChicaTxt.setText("0");
 
         fondoOportunidadesTxt.setEditable(false);
+        fondoOportunidadesTxt.setText("0");
 
         BancosTxt.setEditable(false);
+        BancosTxt.setText("0");
 
         inversionesTemporalesTxt.setEditable(false);
+        inversionesTemporalesTxt.setText("0");
 
         ClientesTxt.setEditable(false);
+        ClientesTxt.setText("0");
 
         documentosPorCobrarTxt.setEditable(false);
+        documentosPorCobrarTxt.setText("0");
 
         deudoresDiversosTxt.setEditable(false);
+        deudoresDiversosTxt.setText("0");
 
         funcionariosTxt.setEditable(false);
+        funcionariosTxt.setText("0");
 
         IvaAcreditableTxt.setEditable(false);
+        IvaAcreditableTxt.setText("0");
 
         inventariosTxt.setEditable(false);
+        inventariosTxt.setText("0");
 
         anticipoProveedoresTxt.setEditable(false);
+        anticipoProveedoresTxt.setText("0");
 
         totalActivosRealizablesTxt.setEditable(false);
+        totalActivosRealizablesTxt.setText("0");
 
         terrenosTxt.setEditable(false);
+        terrenosTxt.setText("0");
 
         edificiosTxt.setEditable(false);
+        edificiosTxt.setText("0");
 
         maquinariasTxt.setEditable(false);
+        maquinariasTxt.setText("0");
 
         mobiliarioYEquipoTxt.setEditable(false);
+        mobiliarioYEquipoTxt.setText("0");
 
         mueblesYEnseresTxt.setEditable(false);
+        mueblesYEnseresTxt.setText("0");
 
         equipoTransporteTxt.setEditable(false);
+        equipoTransporteTxt.setText("0");
 
         entregaYRepartoTxt.setEditable(false);
+        entregaYRepartoTxt.setText("0");
 
         derechosAutorTxt.setEditable(false);
+        derechosAutorTxt.setText("0");
 
         patentesTxt.setEditable(false);
+        patentesTxt.setText("0");
 
         marcasRegistradasTxt.setEditable(false);
+        marcasRegistradasTxt.setText("0");
 
-        nombresComerciales.setEditable(false);
+        nombresComercialesTxt.setEditable(false);
+        nombresComercialesTxt.setText("0");
 
         creditoComercialTxt.setEditable(false);
+        creditoComercialTxt.setText("0");
 
         gastosConstitucionTxt.setEditable(false);
+        gastosConstitucionTxt.setText("0");
 
-        gastosOrganizacion.setEditable(false);
+        gastosOrganizacionTxt.setEditable(false);
+        gastosOrganizacionTxt.setText("0");
 
         cajaGeneralTxt.setEditable(false);
+        cajaGeneralTxt.setText("0");
 
         gastosInstalacionTxt.setEditable(false);
+        gastosInstalacionTxt.setText("0");
 
-        propagandaPublicidad.setEditable(false);
+        propagandaPublicidadTxt.setEditable(false);
+        propagandaPublicidadTxt.setText("0");
 
         primasTxt.setEditable(false);
+        primasTxt.setText("0");
 
         papeleriaUtilesTxt.setEditable(false);
+        papeleriaUtilesTxt.setText("0");
 
         rentasPagadasAnticipoTxt.setEditable(false);
+        rentasPagadasAnticipoTxt.setText("0");
 
         impuestosPagadosAnticipo.setEditable(false);
-
-        totalActivosDiferibles.setEditable(false);
+        impuestosPagadosAnticipo.setText("0");
 
         totalActivosCirculantesTxt.setEditable(false);
+        totalActivosCirculantesTxt.setText("0");
 
         totalActivosFijosTxt.setEditable(false);
-
-        totalActivosDisponibles.setEditable(false);
+        totalActivosFijosTxt.setText("0");
 
         fondoAmortizacionTxt.setEditable(false);
+        fondoAmortizacionTxt.setText("0");
 
         depositoGarantiaTxt.setEditable(false);
+        depositoGarantiaTxt.setText("0");
 
         inversionesProcesoTxt.setEditable(false);
+        inversionesProcesoTxt.setText("0");
 
         terrenosNoUtilizadosTxt.setEditable(false);
+        terrenosNoUtilizadosTxt.setText("0");
 
-        maquinariaNoUtilizada.setEditable(false);
+        maquinariaNoUtilizadaTxt.setEditable(false);
+        maquinariaNoUtilizadaTxt.setText("0");
 
         totalOtrosActivos.setEditable(false);
-
-        totalActivos.setEditable(false);
+        totalOtrosActivos.setText("0");
 
         totalActivosNoCirculantesTxt.setEditable(false);
+        totalActivosNoCirculantesTxt.setText("0");
 
         jLabel61.setText("Pasivos");
 
@@ -458,36 +512,45 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel64.setText("Documentos por pagar");
 
         proveedoresTxt.setEditable(false);
+        proveedoresTxt.setText("0");
 
         documentosPorPagarTxt.setEditable(false);
+        documentosPorPagarTxt.setText("0");
 
         jLabel65.setText("Acreedores diversos");
 
         acreedoresDiversosTxt.setEditable(false);
+        acreedoresDiversosTxt.setText("0");
 
         jLabel66.setText("Dividendos por pagar");
 
         dividendosTxt.setEditable(false);
+        dividendosTxt.setText("0");
 
         jLabel67.setText("IVA por pagar");
 
         ivaPorPagarTxt.setEditable(false);
+        ivaPorPagarTxt.setText("0");
 
         jLabel68.setText("Impuestos sobre la renta");
 
         impuestosRentaTxt.setEditable(false);
+        impuestosRentaTxt.setText("0");
 
         jLabel69.setText("Intereses por pagar");
 
         InteresesTxt.setEditable(false);
+        InteresesTxt.setText("0");
 
         jLabel70.setText("Sueldos por pagar");
 
         sueldosPorPagarTxt.setEditable(false);
+        sueldosPorPagarTxt.setText("0");
 
         jLabel71.setText("Gastos por pagar");
 
-        gastosPorPagar.setEditable(false);
+        gastosPorPagarTxt.setEditable(false);
+        gastosPorPagarTxt.setText("0");
 
         jLabel72.setText("Total pasivos circulantes");
 
@@ -496,34 +559,42 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel74.setText("Acreedores hipotecarios");
 
         acreedoresHipotecariosTxt.setEditable(false);
+        acreedoresHipotecariosTxt.setText("0");
 
         jLabel75.setText("Documentos por pagar L/P");
 
         documentosPorPagarLpTxt.setEditable(false);
+        documentosPorPagarLpTxt.setText("0");
 
         jLabel76.setText("Obligaciones a circulación");
 
         obligacionesTxt.setEditable(false);
+        obligacionesTxt.setText("0");
 
         jLabel77.setText("Bonos por pagar");
 
-        bonosPorPagar.setEditable(false);
+        bonosPorPagarTxt.setEditable(false);
+        bonosPorPagarTxt.setText("0");
 
         jLabel78.setText("Rentas cobradas por anti.");
 
         rentasAnticipoTxt.setEditable(false);
+        rentasAnticipoTxt.setText("0");
 
         jLabel79.setText("Intereses cobrados anti.");
 
         InteresesAnticipadosTxt.setEditable(false);
+        InteresesAnticipadosTxt.setText("0");
 
         jLabel80.setText("Total pasivos no circulantes");
 
         totalPasivosNoCirculantesTxt.setEditable(false);
+        totalPasivosNoCirculantesTxt.setText("0");
 
         jLabel81.setText("Total Pasivos");
 
         totalPasivoCirculanteTxt.setEditable(false);
+        totalPasivoCirculanteTxt.setText("0");
 
         jLabel82.setText("Patrimonio");
 
@@ -534,44 +605,69 @@ public class ESFFrame extends javax.swing.JInternalFrame {
         jLabel85.setText("Aportaciones");
 
         aportacionesTxt.setEditable(false);
+        aportacionesTxt.setText("0");
 
         jLabel86.setText("Prima en venta de acc..");
 
         capitalSocialTxt.setEditable(false);
+        capitalSocialTxt.setText("0");
 
         primaVentasTxt.setEditable(false);
+        primaVentasTxt.setText("0");
 
         jLabel87.setText("Total capital contribuido");
 
         totalCapitalContribuido.setEditable(false);
+        totalCapitalContribuido.setText("0");
 
         jLabel88.setText("Capital ganado");
 
         jLabel89.setText("Utilidad del ejercicio");
 
         utilidadTxt.setEditable(false);
+        utilidadTxt.setText("0");
 
         jLabel90.setText("Perdida del ejercicio");
 
         perdidaTxt.setEditable(false);
+        perdidaTxt.setText("0");
 
         jLabel91.setText("Utilidades retenidas");
 
         utilidadesRetenidasTxt.setEditable(false);
+        utilidadesRetenidasTxt.setText("0");
 
         jLabel92.setText("Total capital ganado");
 
         totalCapitalGanadoTxt.setEditable(false);
+        totalCapitalGanadoTxt.setText("0");
 
         jLabel93.setText("Total Patrimonio");
 
         totalPasivosTxt.setEditable(false);
+        totalPasivosTxt.setText("0");
 
         totalPatrimonioTxt.setEditable(false);
+        totalPatrimonioTxt.setText("0");
 
         jLabel94.setText("A=P+C");
 
         formulaTxt.setEditable(false);
+        formulaTxt.setText("0");
+
+        totalActivosDiferibles.setEditable(false);
+        totalActivosDiferibles.setText("0");
+
+        totalActivos.setEditable(false);
+        totalActivos.setText("0");
+
+        jLabel95.setText("Donaciones");
+
+        donacionesTxt.setEditable(false);
+        donacionesTxt.setText("0");
+
+        totalActivosDisponibles.setEditable(false);
+        totalActivosDisponibles.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -582,320 +678,333 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(impuestosPagadosAnticipo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(308, 308, 308))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel48)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(primasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel47)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(propagandaPublicidad, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel42)
-                                            .addComponent(jLabel43)
-                                            .addComponent(jLabel44)
-                                            .addComponent(jLabel45))
-                                        .addGap(31, 31, 31)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(gastosOrganizacion)
-                                            .addComponent(creditoComercialTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                                            .addComponent(nombresComerciales)
-                                            .addComponent(gastosConstitucionTxt)
-                                            .addComponent(gastosInstalacionTxt)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel46)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(papeleriaUtilesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel49)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(rentasPagadasAnticipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(impuestosPagadosAnticipo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel60)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(totalActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel57)
-                                                    .addGap(37, 37, 37)
-                                                    .addComponent(maquinariaNoUtilizada))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel56)
-                                                    .addGap(39, 39, 39)
-                                                    .addComponent(terrenosNoUtilizadosTxt))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel55)
-                                                    .addGap(32, 32, 32)
-                                                    .addComponent(inversionesProcesoTxt))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel54)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(depositoGarantiaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(fondoAmortizacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(totalActivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGap(407, 407, 407)
-                                            .addComponent(totalActivosCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel79)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(InteresesAnticipadosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(capitalSocialTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                                        .addComponent(aportacionesTxt, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(utilidadesRetenidasTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                                        .addComponent(perdidaTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(utilidadTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(primaVentasTxt, javax.swing.GroupLayout.Alignment.LEADING)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel37)
-                            .addComponent(jLabel52)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(221, 221, 221)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel25)
-                                        .addComponent(jLabel36))
-                                    .addGap(179, 179, 179)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(totalActivosFijosTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                                        .addComponent(totalActivosRealizablesTxt)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel16)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jLabel52)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(221, 221, 221)
+                                        .addComponent(jLabel3))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel51)
+                                            .addComponent(jLabel58))
+                                        .addGap(168, 168, 168)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(totalActivosDiferibles, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                                            .addComponent(totalOtrosActivos)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                            .addComponent(jLabel21)
+                                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                            .addComponent(jLabel22)
+                                                                            .addGap(74, 74, 74)))
+                                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(jLabel23)
+                                                                        .addGap(91, 91, 91)))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel24)
+                                                                    .addGap(31, 31, 31)))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel28)
+                                                                .addGap(128, 128, 128)))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(jLabel30)
+                                                            .addGap(104, 104, 104)))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel31)
+                                                        .addGap(92, 92, 92)))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(funcionariosTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                                                    .addComponent(IvaAcreditableTxt)
+                                                    .addComponent(inventariosTxt)
+                                                    .addComponent(anticipoProveedoresTxt)
+                                                    .addComponent(terrenosTxt)
+                                                    .addComponent(edificiosTxt)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(jLabel32)
+                                                            .addGap(6, 6, 6))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(jLabel33)
+                                                            .addGap(52, 52, 52)))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel34)
+                                                        .addGap(44, 44, 44)))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(maquinariasTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                                                    .addComponent(mobiliarioYEquipoTxt)
+                                                    .addComponent(mueblesYEnseresTxt)
+                                                    .addComponent(equipoTransporteTxt, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel35)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel39)
+                                                                .addGap(102, 102, 102)))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(jLabel40)
+                                                            .addGap(52, 52, 52)))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel41)
+                                                            .addComponent(jLabel38))
+                                                        .addGap(42, 42, 42)))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(patentesTxt)
+                                                    .addComponent(derechosAutorTxt)
+                                                    .addComponent(entregaYRepartoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                                                    .addComponent(marcasRegistradasTxt)))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel12)
+                                                    .addComponent(jLabel13)
+                                                    .addComponent(jLabel14)
+                                                    .addComponent(jLabel15)
+                                                    .addComponent(jLabel18)
+                                                    .addComponent(jLabel19)
+                                                    .addComponent(jLabel20)
+                                                    .addComponent(jLabel11))
+                                                .addGap(29, 29, 29)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(cajaGeneralTxt)
+                                                    .addComponent(deudoresDiversosTxt)
+                                                    .addComponent(fondoOportunidadesTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                                                    .addComponent(cajaChicaTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(BancosTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(inversionesTemporalesTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(ClientesTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(documentosPorCobrarTxt, javax.swing.GroupLayout.Alignment.LEADING))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel25)
+                                                .addComponent(jLabel36))
+                                            .addGap(158, 158, 158)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(totalActivosFijosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(totalActivosRealizablesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel16)
                                             .addGap(146, 146, 146)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel6)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                     .addGap(12, 12, 12)
-                                                    .addComponent(jLabel7))))
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel7)
+                                                        .addComponent(totalActivosDisponibles))))))
+                                    .addComponent(jLabel8)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(179, 179, 179)
-                                            .addComponent(totalActivosDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel51)
-                                        .addComponent(jLabel58))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(totalActivosDiferibles, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                                        .addComponent(totalOtrosActivos))))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel21)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel22)
-                                                                .addGap(74, 74, 74)))
-                                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                            .addComponent(jLabel23)
-                                                            .addGap(91, 91, 91)))
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel24)
-                                                        .addGap(31, 31, 31)))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel28)
-                                                    .addGap(128, 128, 128)))
+                                            .addComponent(jLabel48)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(primasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel47)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(propagandaPublicidadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel42)
+                                                    .addComponent(jLabel44)
+                                                    .addComponent(jLabel45)
+                                                    .addComponent(jLabel43))
+                                                .addGap(31, 31, 31)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(gastosOrganizacionTxt)
+                                                    .addComponent(creditoComercialTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                                                    .addComponent(nombresComercialesTxt)
+                                                    .addComponent(gastosConstitucionTxt)
+                                                    .addComponent(gastosInstalacionTxt)))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel30)
-                                                .addGap(104, 104, 104)))
+                                                .addComponent(jLabel46)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(papeleriaUtilesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel31)
-                                            .addGap(92, 92, 92)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(funcionariosTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                                        .addComponent(IvaAcreditableTxt)
-                                        .addComponent(inventariosTxt)
-                                        .addComponent(anticipoProveedoresTxt)
-                                        .addComponent(terrenosTxt)
-                                        .addComponent(edificiosTxt)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel49)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(rentasPagadasAnticipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 335, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel93)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(totalPatrimonioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel32)
-                                                .addGap(6, 6, 6))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel33)
-                                                .addGap(52, 52, 52)))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel34)
-                                            .addGap(44, 44, 44)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(maquinariasTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                                        .addComponent(mobiliarioYEquipoTxt)
-                                        .addComponent(mueblesYEnseresTxt)
-                                        .addComponent(equipoTransporteTxt, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel35)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(bonosPorPagarTxt)
+                                                            .addComponent(documentosPorPagarLpTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                                                            .addComponent(obligacionesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
+                                                        .addComponent(perdidaTxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(InteresesAnticipadosTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                                            .addComponent(capitalSocialTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                                            .addComponent(aportacionesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                                            .addComponent(primaVentasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(rentasAnticipoTxt))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                            .addComponent(donacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(2, 2, 2))
+                                                        .addComponent(utilidadTxt)
+                                                        .addComponent(utilidadesRetenidasTxt))
                                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel38)
-                                                        .addGap(54, 54, 54)))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel39)
-                                                    .addGap(102, 102, 102)))
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel62)
+                                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel73)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(acreedoresHipotecariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel71)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(gastosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel70)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(sueldosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel69)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(InteresesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel68)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(impuestosRentaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel67)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(ivaPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel66)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(dividendosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel65)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(acreedoresDiversosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel64)
+                                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(documentosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                                    .addComponent(jLabel63)
+                                                                    .addGap(125, 125, 125)
+                                                                    .addComponent(proveedoresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addComponent(jLabel72, javax.swing.GroupLayout.Alignment.LEADING))
+                                                            .addComponent(jLabel61))
+                                                        .addGap(14, 14, 14)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel82)
+                                                                .addComponent(jLabel83)
+                                                                .addComponent(jLabel84)
+                                                                .addComponent(jLabel85)
+                                                                .addComponent(jLabel86)
+                                                                .addComponent(jLabel95)
+                                                                .addComponent(jLabel87)
+                                                                .addComponent(jLabel88)
+                                                                .addComponent(jLabel89)
+                                                                .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel78)
+                                                                .addComponent(jLabel77)
+                                                                .addComponent(jLabel76)
+                                                                .addComponent(jLabel75))
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel90)
+                                                                .addGap(71, 71, 71)))
+                                                        .addComponent(jLabel91)
+                                                        .addComponent(jLabel92))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(37, 37, 37)))
+                                                .addGap(142, 142, 142))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel40)
-                                                .addGap(52, 52, 52)))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel41)
-                                            .addGap(42, 42, 42)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(patentesTxt)
-                                        .addComponent(derechosAutorTxt)
-                                        .addComponent(entregaYRepartoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                                        .addComponent(marcasRegistradasTxt)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel12)
-                                        .addComponent(jLabel13)
-                                        .addComponent(jLabel14)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jLabel18)
-                                        .addComponent(jLabel19)
-                                        .addComponent(jLabel20)
-                                        .addComponent(jLabel11))
-                                    .addGap(29, 29, 29)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(cajaGeneralTxt)
-                                        .addComponent(deudoresDiversosTxt)
-                                        .addComponent(fondoOportunidadesTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                                        .addComponent(cajaChicaTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(BancosTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(inversionesTemporalesTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ClientesTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(documentosPorCobrarTxt, javax.swing.GroupLayout.Alignment.LEADING))))
-                            .addComponent(jLabel8))
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel61)
-                            .addComponent(jLabel62)
-                            .addComponent(jLabel73)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel78)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rentasAnticipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel72)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel80)
-                                    .addComponent(jLabel81)
-                                    .addComponent(jLabel82)
-                                    .addComponent(jLabel83)
-                                    .addComponent(jLabel84)
-                                    .addComponent(jLabel85)
-                                    .addComponent(jLabel86)
-                                    .addComponent(jLabel87)
-                                    .addComponent(jLabel88)
-                                    .addComponent(jLabel89)
-                                    .addComponent(jLabel90)
-                                    .addComponent(jLabel91)
-                                    .addComponent(jLabel92)
-                                    .addComponent(jLabel93)
-                                    .addComponent(jLabel94)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel76)
-                                    .addComponent(jLabel77))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(obligacionesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                                    .addComponent(bonosPorPagar)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel75)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(documentosPorPagarLpTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel64)
-                                                .addComponent(jLabel65)
-                                                .addComponent(jLabel66)
-                                                .addComponent(jLabel67)
-                                                .addComponent(jLabel68)
-                                                .addComponent(jLabel63)
-                                                .addComponent(jLabel69)
-                                                .addComponent(jLabel70)
-                                                .addComponent(jLabel71))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGap(17, 17, 17)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(documentosPorPagarTxt)
-                                        .addComponent(acreedoresDiversosTxt)
-                                        .addComponent(dividendosTxt)
-                                        .addComponent(ivaPorPagarTxt)
-                                        .addComponent(impuestosRentaTxt)
-                                        .addComponent(proveedoresTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                                        .addComponent(InteresesTxt)
-                                        .addComponent(sueldosPorPagarTxt)
-                                        .addComponent(gastosPorPagar)
-                                        .addComponent(acreedoresHipotecariosTxt)))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(totalCapitalContribuido, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                                    .addComponent(totalCapitalGanadoTxt)
-                                    .addComponent(totalPasivosNoCirculantesTxt)
-                                    .addComponent(totalPasivoCirculanteTxt))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                                                .addComponent(jLabel94)
+                                                .addGap(110, 110, 110)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(formulaTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(totalPasivoCirculanteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(totalPasivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(totalCapitalContribuido, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(totalCapitalGanadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(191, 191, 191)))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(totalPatrimonioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(totalPasivosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(formulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(202, 202, 202))))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(fondoAmortizacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel57)
+                                                            .addComponent(jLabel56)
+                                                            .addComponent(jLabel55)
+                                                            .addComponent(jLabel54))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(depositoGarantiaTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                                                            .addComponent(inversionesProcesoTxt)
+                                                            .addComponent(terrenosNoUtilizadosTxt)
+                                                            .addComponent(maquinariaNoUtilizadaTxt)))
+                                                    .addComponent(jLabel60))
+                                                .addGap(172, 172, 172))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel59)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(totalActivosNoCirculantesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                                            .addComponent(totalActivos)))
+                                    .addComponent(totalActivosCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(totalPasivosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(86, 86, 86))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -906,23 +1015,23 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel61))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel62))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(cajaGeneralTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel61)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel62)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel63)
                             .addComponent(proveedoresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -955,59 +1064,72 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                     .addComponent(jLabel68)
                     .addComponent(impuestosRentaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(totalActivosDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel69)
-                    .addComponent(InteresesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel69)
+                        .addComponent(InteresesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(totalActivosDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jLabel70)
-                    .addComponent(sueldosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sueldosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel70))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(ClientesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel71)
-                    .addComponent(gastosPorPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel71)
+                        .addComponent(gastosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel18)
+                        .addComponent(ClientesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(documentosPorCobrarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel72)
                     .addComponent(totalPasivoCirculanteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(deudoresDiversosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(funcionariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(IvaAcreditableTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(inventariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel76)
+                                .addComponent(obligacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel73)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(acreedoresHipotecariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel74))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(documentosPorPagarLpTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel75))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(deudoresDiversosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel73)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(funcionariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel74)
-                    .addComponent(acreedoresHipotecariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(IvaAcreditableTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel75)
-                    .addComponent(documentosPorPagarLpTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
+                        .addComponent(jLabel24)
+                        .addComponent(anticipoProveedoresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(inventariosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel76)
-                        .addComponent(obligacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(anticipoProveedoresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel77)
-                    .addComponent(bonosPorPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bonosPorPagarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel77)))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
@@ -1021,166 +1143,185 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                     .addComponent(jLabel79)
                     .addComponent(InteresesAnticipadosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel80)
-                    .addComponent(totalPasivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel81)
-                    .addComponent(totalPasivosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(terrenosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel82))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(edificiosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel83))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel31)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(maquinariasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel84)
-                        .addComponent(capitalSocialTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(mobiliarioYEquipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel85)
-                    .addComponent(aportacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(mueblesYEnseresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel86)
-                    .addComponent(primaVentasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(equipoTransporteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel87)
-                    .addComponent(totalCapitalContribuido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(entregaYRepartoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel88))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(totalActivosFijosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel89)
-                    .addComponent(utilidadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(jLabel90)
-                    .addComponent(perdidaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(derechosAutorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel91)
-                    .addComponent(utilidadesRetenidasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(patentesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel92)
-                    .addComponent(totalCapitalGanadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(marcasRegistradasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel93)
-                    .addComponent(totalPatrimonioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(nombresComerciales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel94)
-                    .addComponent(formulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel42)
-                    .addComponent(creditoComercialTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43)
-                    .addComponent(gastosConstitucionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(gastosOrganizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(gastosInstalacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(papeleriaUtilesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(propagandaPublicidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel47))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel48)
-                    .addComponent(primasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(rentasPagadasAnticipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel50)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(impuestosPagadosAnticipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel51)
-                    .addComponent(totalActivosDiferibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel52)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fondoAmortizacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel54)
-                    .addComponent(depositoGarantiaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel55)
-                    .addComponent(inversionesProcesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel56)
-                    .addComponent(terrenosNoUtilizadosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel57)
-                    .addComponent(maquinariaNoUtilizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel58)
-                    .addComponent(totalOtrosActivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel59)
-                    .addComponent(totalActivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel80)
+                                    .addComponent(totalPasivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel81)
+                                    .addComponent(totalPasivosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel29)
+                                    .addComponent(terrenosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel82))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel30)
+                                    .addComponent(edificiosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel83))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel31)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(maquinariasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel84)
+                                        .addComponent(capitalSocialTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel32)
+                                    .addComponent(mobiliarioYEquipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(aportacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel85))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(mueblesYEnseresTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(primaVentasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel86))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(equipoTransporteTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel95)
+                            .addComponent(donacionesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(entregaYRepartoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel87)
+                            .addComponent(totalCapitalContribuido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(totalActivosFijosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel88))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel89)
+                            .addComponent(utilidadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel39)
+                                    .addComponent(patentesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(utilidadesRetenidasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(derechosAutorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(perdidaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel90)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel38)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel40)
+                                            .addComponent(marcasRegistradasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel41)
+                                            .addComponent(nombresComercialesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel42)
+                                            .addComponent(creditoComercialTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel94)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(totalCapitalGanadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel92))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel93)
+                                            .addComponent(totalPatrimonioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(formulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(4, 4, 4))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel91)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel43)
+                            .addComponent(gastosConstitucionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel44)
+                            .addComponent(gastosOrganizacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel45)
+                            .addComponent(gastosInstalacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel46)
+                            .addComponent(papeleriaUtilesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(propagandaPublicidadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel47))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel48)
+                            .addComponent(primasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel49)
+                            .addComponent(rentasPagadasAnticipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel50)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(impuestosPagadosAnticipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel51)
+                            .addComponent(totalActivosDiferibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fondoAmortizacionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel54)
+                            .addComponent(depositoGarantiaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel55)
+                            .addComponent(inversionesProcesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel56)
+                            .addComponent(terrenosNoUtilizadosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel57)
+                            .addComponent(maquinariaNoUtilizadaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel58)
+                            .addComponent(totalOtrosActivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel59)
+                            .addComponent(totalActivosNoCirculantesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel60))
                     .addComponent(totalActivos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -1202,10 +1343,12 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addButtom)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(saveButtom)
+                                .addGap(147, 147, 147))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -1224,23 +1367,20 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                                 .addComponent(SubSubGroupItem)
                                 .addGap(87, 87, 87)
                                 .addComponent(SubSubGroupCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(addButtom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(saveButtom)
-                                .addGap(147, 147, 147)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                                .addComponent(jLabel4)
+                                .addGap(49, 49, 49)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(52, 52, 52)
                                 .addComponent(AccountCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 448, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(readButton)
-                                .addGap(121, 121, 121))))))
+                                .addGap(121, 121, 121))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1347, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1265,12 +1405,326 @@ public class ESFFrame extends javax.swing.JInternalFrame {
                     .addComponent(readButton)
                     .addComponent(saveButtom))
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1405, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1426, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void agregado(){
+        try{
+        switch(AccountCombo.getSelectedItem().toString()){
+            case "Caja general":
+                    cajaGeneralTxt.setText(MontoTxt.getText());
+                   
+                break;
+            case "Fondo fijo de caja chica":
+                cajaChicaTxt.setText(MontoTxt.getText());
+                break;
+            case "Fondo de oportunidades":
+                fondoOportunidadesTxt.setText(MontoTxt.getText());
+                break;
+            case "Bancos":
+                BancosTxt.setText(MontoTxt.getText());
+                break;
+            case "Inversiones temporales":
+                inversionesTemporalesTxt.setText(MontoTxt.getText());
+                break;
+            case "Clientes":
+                ClientesTxt.setText(MontoTxt.getText());
+                break;
+            case "Documentos por cobrar":
+                documentosPorCobrarTxt.setText(MontoTxt.getText());
+                break;
+            case "Deudores diversos":
+                deudoresDiversosTxt.setText(MontoTxt.getText());
+                break;
+            case "Funcionarios y empleados":
+                funcionariosTxt.setText(MontoTxt.getText());
+                break;
+            case "Iva acreditable":
+                IvaAcreditableTxt.setText(MontoTxt.getText());
+                break;
+            case "Inventarios":
+                inventariosTxt.setText(MontoTxt.getText());
+                break;
+            case "Anticipo a proveedores":
+                anticipoProveedoresTxt.setText(MontoTxt.getText());
+                break;
+            case "Terrenos":
+                terrenosTxt.setText(MontoTxt.getText());
+                break;
+            case "Edificios":
+                edificiosTxt.setText(MontoTxt.getText());
+                break;
+            case "Maquinaria":
+                maquinariasTxt.setText(MontoTxt.getText());
+                break;
+            case "Mobiliarios y equipo de oficina":
+                mobiliarioYEquipoTxt.setText(MontoTxt.getText());                
+                break;
+            case "Muebles y enseres":
+                mueblesYEnseresTxt.setText(MontoTxt.getText());
+                break;
+            case "Equipo de transporte":
+                equipoTransporteTxt.setText(MontoTxt.getText());
+                break;
+            case "Equipo de entrega y reparto":
+                entregaYRepartoTxt.setText(MontoTxt.getText());
+                break;
+            case "Derechos de autor":
+                derechosAutorTxt.setText(MontoTxt.getText());
+                break;
+            case "Patentes":
+                patentesTxt.setText(MontoTxt.getText());
+                break;
+            case "Marcas registradas":
+                marcasRegistradasTxt.setText(MontoTxt.getText());
+                break;
+            case "Nombres comerciales":
+                nombresComercialesTxt.setText(MontoTxt.getText());
+                break;
+            case "Crédito comercial":
+                creditoComercialTxt.setText(MontoTxt.getText());
+                break;
+            case "Gastos de constitución":
+                gastosConstitucionTxt.setText(MontoTxt.getText());
+                break;
+            case "Gastos de organización":
+                gastosOrganizacionTxt.setText(MontoTxt.getText());
+                break;
+            case "Gastos de instalación":
+                gastosInstalacionTxt.setText(MontoTxt.getText());
+                break;
+            case "Papelería y útiles de oficina":
+                papeleriaUtilesTxt.setText(MontoTxt.getText());
+                break;
+            case "Progaganda y publicidad":
+                propagandaPublicidadTxt.setText(MontoTxt.getText());
+                break;
+            case "Primas de seguros y fianzas":
+                primasTxt.setText(MontoTxt.getText());
+                break;
+            case "Rentas pagadas por anticipo":
+                rentasPagadasAnticipoTxt.setText(MontoTxt.getText());
+                break;
+            case "Impuestos pagados por anticipo":
+                impuestosPagadosAnticipo.setText(MontoTxt.getText());
+                break;
+            case "Fondo de amortización de obligaciones":
+                fondoAmortizacionTxt.setText(MontoTxt.getText());
+                break;
+            case "Depósito en garantía":
+                depositoGarantiaTxt.setText(MontoTxt.getText());
+                break;
+            case "Inversiones en proceso":
+                inversionesProcesoTxt.setText(MontoTxt.getText());
+                break;
+            case "Terrenos no utilizados":
+                terrenosNoUtilizadosTxt.setText(MontoTxt.getText());
+                break;
+            case "Maquinaria no utilizada":
+                maquinariaNoUtilizadaTxt.setText(MontoTxt.getText());
+                break;
+            case "Proveedores":
+                proveedoresTxt.setText(MontoTxt.getText());
+                break;
+            case "Documentos por pagar":
+                documentosPorPagarTxt.setText(MontoTxt.getText());
+                break;
+            case "Acreedores diversos":
+                acreedoresDiversosTxt.setText(MontoTxt.getText());
+                break;
+            case "Dividendos por pagar":
+                dividendosTxt.setText(MontoTxt.getText());
+                break;
+            case "IVA por pagar":
+                ivaPorPagarTxt.setText(MontoTxt.getText());
+                break;
+            case "Impuestos sobre la renta por pagar":
+                impuestosRentaTxt.setText(MontoTxt.getText());
+                break;
+            case "Intereses por pagar":
+                InteresesTxt.setText(MontoTxt.getText());
+                break;
+            case "Sueldos acumulados por pagar":
+                sueldosPorPagarTxt.setText(MontoTxt.getText());
+                break;
+            case "Gastos acumulados por pagar":
+                gastosPorPagarTxt.setText(MontoTxt.getText());
+                break;
+            case "Acreedores hipotecarios":
+                acreedoresHipotecariosTxt.setText(MontoTxt.getText());
+                break;
+            case "Documentos por pagar a largo plazo":
+                documentosPorPagarLpTxt.setText(MontoTxt.getText());
+                break;
+            case "Obligaciones a circulación":
+                obligacionesTxt.setText(MontoTxt.getText());
+                break;
+            case "Bonos por pagar":
+                bonosPorPagarTxt.setText(MontoTxt.getText());
+                break;
+            case "Rentas cobradas por anticipo":
+                rentasAnticipoTxt.setText(MontoTxt.getText());
+                break;
+            case "Intereses cobrados por anticipo":
+                InteresesAnticipadosTxt.setText(MontoTxt.getText());
+                break;
+            case "Capital Social":
+                capitalSocialTxt.setText(MontoTxt.getText());
+                break;
+            case "Aportaciones para futuro aumento de capital":
+                aportacionesTxt.setText(MontoTxt.getText());
+                break;
+            case "Prima en venta de acciones":
+                primaVentasTxt.setText(MontoTxt.getText());
+                break;
+            case "Donaciones":
+                donacionesTxt.setText(MontoTxt.getText());
+                break;
+            case "Utilidad del ejercicio":
+                utilidadTxt.setText(MontoTxt.getText());
+                break;
+            case "Pérdida del ejercicio":
+                perdidaTxt.setText(MontoTxt.getText());
+                break;
+            case "Utilidades retenidas":
+                utilidadesRetenidasTxt.setText(MontoTxt.getText());
+                break;
+
+        }
+        
+        
+        
+        double cajaGeneral = Double.parseDouble(cajaGeneralTxt.getText());
+        double cajaChica = Double.parseDouble(cajaChicaTxt.getText());
+        double fondoOportunidades = Double.parseDouble(fondoOportunidadesTxt.getText());
+        double Bancos = Double.parseDouble(BancosTxt.getText());
+        double inversionesTemporales = Double.parseDouble(inversionesTemporalesTxt.getText());
+        double Clientes = Double.parseDouble(ClientesTxt.getText());
+        double documentosPorCobrar = Double.parseDouble(documentosPorCobrarTxt.getText());
+        double deudoresDiversos = Double.parseDouble(deudoresDiversosTxt.getText());
+        double funcionariosYEmpleados = Double.parseDouble(funcionariosTxt.getText());
+        double ivaAcreditable = Double.parseDouble(IvaAcreditableTxt.getText());
+        double Inventarios = Double.parseDouble(inventariosTxt.getText());
+        double anticipoProveedores = Double.parseDouble(anticipoProveedoresTxt.getText());
+        double Terrenos = Double.parseDouble(terrenosTxt.getText());
+        double Edificios = Double.parseDouble(edificiosTxt.getText());
+        double Maquinarias = Double.parseDouble(maquinariasTxt.getText());
+        double mobiliarioYEquipo = Double.parseDouble(mobiliarioYEquipoTxt.getText());
+        double mueblesYEnseres = Double.parseDouble(mueblesYEnseresTxt.getText());
+        double equipoTransporte = Double.parseDouble(equipoTransporteTxt.getText());
+        double equipoEntregaYReparto = Double.parseDouble(entregaYRepartoTxt.getText());
+        double derechosAutor = Double.parseDouble(derechosAutorTxt.getText());
+        double patentes = Double.parseDouble(patentesTxt.getText());
+        double marcasRegistradas = Double.parseDouble(marcasRegistradasTxt.getText());
+        double nombresComerciales = Double.parseDouble(nombresComercialesTxt.getText());
+        double creditoComercial = Double.parseDouble(creditoComercialTxt.getText());
+        double gastosConstitucion = Double.parseDouble(gastosConstitucionTxt.getText());
+        double gastosOrganizacion = Double.parseDouble(gastosOrganizacionTxt.getText());
+        double gastosInstalacion = Double.parseDouble(gastosInstalacionTxt.getText());
+        double papeleriaYUtiles = Double.parseDouble(papeleriaUtilesTxt.getText());
+        double progagandaYPublicidad = Double.parseDouble(propagandaPublicidadTxt.getText());
+        double primasYSeguros = Double.parseDouble(primasTxt.getText());
+        double rentasAnticipo = Double.parseDouble(rentasPagadasAnticipoTxt.getText());
+        double impuestosAnticipo = Double.parseDouble(impuestosPagadosAnticipo.getText());
+        double fondoAmortizacion = Double.parseDouble(fondoAmortizacionTxt.getText());
+        double depositoEnGarantia = Double.parseDouble(depositoGarantiaTxt.getText());
+        double inversionesEnProceso = Double.parseDouble(inversionesProcesoTxt.getText());
+        double terrenosNoUtilizados = Double.parseDouble(terrenosNoUtilizadosTxt.getText());
+        double maquinariaNoUtilizada = Double.parseDouble(maquinariaNoUtilizadaTxt.getText());
+        double proveedores = Double.parseDouble(proveedoresTxt.getText());
+        double documentosPorPagar = Double.parseDouble(documentosPorPagarTxt.getText());
+        double acreedoresDiversos = Double.parseDouble(acreedoresDiversosTxt.getText());
+        double dividendosPorPagar = Double.parseDouble(dividendosTxt.getText());
+        double ivaPorPagar = Double.parseDouble(ivaPorPagarTxt.getText());
+        double impuestosSobreRenta = Double.parseDouble(impuestosRentaTxt.getText());
+        double interesesPorPagar = Double.parseDouble(InteresesTxt.getText());
+        double sueldosPorPagar = Double.parseDouble(sueldosPorPagarTxt.getText());
+        double gastosPorPagar = Double.parseDouble(gastosPorPagarTxt.getText());
+        double acreedoresHipotecarios = Double.parseDouble(acreedoresHipotecariosTxt.getText());
+        double documentosPorPagarLP = Double.parseDouble(documentosPorPagarLpTxt.getText());
+        double obligacionesACirculacion = Double.parseDouble(obligacionesTxt.getText());
+        double bonosPorPagar = Double.parseDouble(bonosPorPagarTxt.getText());
+        double rentasCobradasAnticipo = Double.parseDouble(rentasAnticipoTxt.getText());
+        double interesesCobradosAnticipo = Double.parseDouble(InteresesAnticipadosTxt.getText());
+        double capitalSocial = Double.parseDouble(capitalSocialTxt.getText());
+        double aportaciones = Double.parseDouble(aportacionesTxt.getText());
+        double primaVentasAcciones = Double.parseDouble(primaVentasTxt.getText());
+        double donaciones = Double.parseDouble(donacionesTxt.getText());
+        double utilidadDelEjercicio = Double.parseDouble(utilidadTxt.getText());
+        double perdidaDelEjercicio = Double.parseDouble(perdidaTxt.getText());
+        double utilidadesRetenidas = Double.parseDouble(utilidadesRetenidasTxt.getText());
+        
+
+
+        ESFModel model = new ESFModel(cajaGeneral, cajaChica,fondoOportunidades,Bancos,inversionesTemporales,Clientes,documentosPorCobrar
+       ,deudoresDiversos, funcionariosYEmpleados, ivaAcreditable, Inventarios, anticipoProveedores, Terrenos,Edificios,Maquinarias,
+        mobiliarioYEquipo, mueblesYEnseres, equipoTransporte, equipoEntregaYReparto, derechosAutor, patentes, marcasRegistradas,
+        nombresComerciales, creditoComercial, gastosConstitucion, gastosOrganizacion, gastosInstalacion, papeleriaYUtiles,
+        progagandaYPublicidad, primasYSeguros, rentasAnticipo, impuestosAnticipo, fondoAmortizacion,depositoEnGarantia, inversionesEnProceso,
+        terrenosNoUtilizados, maquinariaNoUtilizada,proveedores, documentosPorPagar, acreedoresDiversos, dividendosPorPagar, ivaPorPagar,
+        impuestosSobreRenta, interesesPorPagar, sueldosPorPagar, gastosPorPagar, acreedoresHipotecarios, documentosPorPagarLP, obligacionesACirculacion,
+        bonosPorPagar, rentasCobradasAnticipo, interesesCobradosAnticipo, capitalSocial, aportaciones, primaVentasAcciones, donaciones, utilidadDelEjercicio,
+        perdidaDelEjercicio, utilidadesRetenidas);
+        
+        ba.adicionar(model);
+        
+        totalActivosDisponibles.setText(Double.toString(model.getTotalActivosDisponibles()));
+        totalActivosRealizablesTxt.setText(Double.toString(model.getTotalActivosRealizables()));
+        totalActivosCirculantesTxt.setText(Double.toString(model.getTotalActivosCirculantes()));
+        totalActivosFijosTxt.setText(Double.toString(model.getTotalActivosFijos()));
+        totalActivosDiferibles.setText(Double.toString(model.getTotalActivosDiferibles()));
+        totalOtrosActivos.setText(Double.toString(model.getTotalOtrosActivos()));
+        totalActivosNoCirculantesTxt.setText(Double.toString(model.getTotalActivosNoCirculantes()));
+        totalActivos.setText(Double.toString(model.getTotalActivos()));
+        totalPasivoCirculanteTxt.setText(Double.toString(model.getTotalPasivosCirculantes()));
+        totalPasivosNoCirculantesTxt.setText(Double.toString(model.getTotalPasivosNoCirculantes()));
+        totalPasivosTxt.setText(Double.toString(model.getTotalPasivos()));
+        totalCapitalContribuido.setText(Double.toString(model.getTotalCapitalContribuido()));
+        totalCapitalGanadoTxt.setText(Double.toString(model.getTotalCapitalGanado()));
+        totalPatrimonioTxt.setText(Double.toString(model.getTotalPatrimonio()));
+        formulaTxt.setText(Double.toString(model.getFormula()));
+        
+        
+        System.out.print(ba.tamaño());
+           }catch(Exception e){
+    JOptionPane.showMessageDialog(null, "Verifique los datos ingresados por favor", "Advertencia", HEIGHT);
+}
+    }
+    
+    public BalanceArreglo guardado(){
+        System.out.print(ba.tamaño());
+        return ba;
+    }
+    
+    public void lectura(){
+        BalanceController bc = new BalanceController(this);
+        ba = bc.Leer();
+        
+        for(int i =0; i<ba.tamaño();i++){
+            cajaGeneralTxt.setText(Double.toString(ba.obtener(i).getCajaGeneral()));
+            cajaChicaTxt.setText(Double.toString(ba.obtener(i).getCajaChica()));
+        }
+        
+        System.out.print(ba.tamaño());
+        
+    }
+    
+    
+    public void inicio(){
+        BalanceController bc = new BalanceController(this);
+        AccountCombo.addActionListener(bc);
+        addButtom.addActionListener(bc);
+        saveButtom.addActionListener(bc);
+        readButton.addActionListener(bc);
+        
+    }
+    
+    
+    
     private void groupComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_groupComboItemStateChanged
         if(evt.getStateChange()==ItemEvent.SELECTED){
             if(this.groupCombo.getSelectedIndex()>0){
@@ -1303,6 +1757,11 @@ public class ESFFrame extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_SubSubGroupComboItemStateChanged
+
+    private void MontoTxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MontoTxtKeyTyped
+        char c = evt.getKeyChar();
+        if(c<'0'||c>'9')evt.consume();
+    }//GEN-LAST:event_MontoTxtKeyTyped
 
     
     
@@ -1498,50 +1957,51 @@ public class ESFFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> AccountCombo;
-    private javax.swing.JTextField BancosTxt;
-    private javax.swing.JTextField ClientesTxt;
-    private javax.swing.JTextField InteresesAnticipadosTxt;
-    private javax.swing.JTextField InteresesTxt;
-    private javax.swing.JTextField IvaAcreditableTxt;
+    public javax.swing.JTextField BancosTxt;
+    public javax.swing.JTextField ClientesTxt;
+    public javax.swing.JTextField InteresesAnticipadosTxt;
+    public javax.swing.JTextField InteresesTxt;
+    public javax.swing.JTextField IvaAcreditableTxt;
     public javax.swing.JTextField MontoTxt;
     public javax.swing.JComboBox<String> SubGroupCombo;
     public javax.swing.JComboBox<String> SubSubGroupCombo;
     private javax.swing.JLabel SubSubGroupItem;
-    private javax.swing.JTextField acreedoresDiversosTxt;
-    private javax.swing.JTextField acreedoresHipotecariosTxt;
+    public javax.swing.JTextField acreedoresDiversosTxt;
+    public javax.swing.JTextField acreedoresHipotecariosTxt;
     public javax.swing.JButton addButtom;
-    private javax.swing.JTextField anticipoProveedoresTxt;
-    private javax.swing.JTextField aportacionesTxt;
-    private javax.swing.JTextField bonosPorPagar;
-    private javax.swing.JTextField cajaChicaTxt;
-    private javax.swing.JTextField cajaGeneralTxt;
-    private javax.swing.JTextField capitalSocialTxt;
-    private javax.swing.JTextField creditoComercialTxt;
-    private javax.swing.JTextField depositoGarantiaTxt;
-    private javax.swing.JTextField derechosAutorTxt;
-    private javax.swing.JTextField deudoresDiversosTxt;
-    private javax.swing.JTextField dividendosTxt;
-    private javax.swing.JTextField documentosPorCobrarTxt;
-    private javax.swing.JTextField documentosPorPagarLpTxt;
-    private javax.swing.JTextField documentosPorPagarTxt;
-    private javax.swing.JTextField edificiosTxt;
-    private javax.swing.JTextField entregaYRepartoTxt;
-    private javax.swing.JTextField equipoTransporteTxt;
-    private javax.swing.JTextField fondoAmortizacionTxt;
-    private javax.swing.JTextField fondoOportunidadesTxt;
+    public javax.swing.JTextField anticipoProveedoresTxt;
+    public javax.swing.JTextField aportacionesTxt;
+    public javax.swing.JTextField bonosPorPagarTxt;
+    public javax.swing.JTextField cajaChicaTxt;
+    public javax.swing.JTextField cajaGeneralTxt;
+    public javax.swing.JTextField capitalSocialTxt;
+    public javax.swing.JTextField creditoComercialTxt;
+    public javax.swing.JTextField depositoGarantiaTxt;
+    public javax.swing.JTextField derechosAutorTxt;
+    public javax.swing.JTextField deudoresDiversosTxt;
+    public javax.swing.JTextField dividendosTxt;
+    public javax.swing.JTextField documentosPorCobrarTxt;
+    public javax.swing.JTextField documentosPorPagarLpTxt;
+    public javax.swing.JTextField documentosPorPagarTxt;
+    public javax.swing.JTextField donacionesTxt;
+    public javax.swing.JTextField edificiosTxt;
+    public javax.swing.JTextField entregaYRepartoTxt;
+    public javax.swing.JTextField equipoTransporteTxt;
+    public javax.swing.JTextField fondoAmortizacionTxt;
+    public javax.swing.JTextField fondoOportunidadesTxt;
     public javax.swing.JTextField formulaTxt;
-    private javax.swing.JTextField funcionariosTxt;
-    private javax.swing.JTextField gastosConstitucionTxt;
-    private javax.swing.JTextField gastosInstalacionTxt;
-    private javax.swing.JTextField gastosOrganizacion;
-    private javax.swing.JTextField gastosPorPagar;
+    public javax.swing.JTextField funcionariosTxt;
+    public javax.swing.JTextField gastosConstitucionTxt;
+    public javax.swing.JTextField gastosInstalacionTxt;
+    public javax.swing.JTextField gastosOrganizacionTxt;
+    public javax.swing.JTextField gastosPorPagarTxt;
     public javax.swing.JComboBox<String> groupCombo;
-    private javax.swing.JTextField impuestosPagadosAnticipo;
-    private javax.swing.JTextField impuestosRentaTxt;
-    private javax.swing.JTextField inventariosTxt;
-    private javax.swing.JTextField inversionesProcesoTxt;
-    private javax.swing.JTextField inversionesTemporalesTxt;
-    private javax.swing.JTextField ivaPorPagarTxt;
+    public javax.swing.JTextField impuestosPagadosAnticipo;
+    public javax.swing.JTextField impuestosRentaTxt;
+    public javax.swing.JTextField inventariosTxt;
+    public javax.swing.JTextField inversionesProcesoTxt;
+    public javax.swing.JTextField inversionesTemporalesTxt;
+    public javax.swing.JTextField ivaPorPagarTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1636,45 +2096,48 @@ public class ESFFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField maquinariaNoUtilizada;
-    private javax.swing.JTextField maquinariasTxt;
-    private javax.swing.JTextField marcasRegistradasTxt;
-    private javax.swing.JTextField mobiliarioYEquipoTxt;
-    private javax.swing.JTextField mueblesYEnseresTxt;
-    private javax.swing.JTextField nombresComerciales;
-    private javax.swing.JTextField obligacionesTxt;
-    private javax.swing.JTextField papeleriaUtilesTxt;
-    private javax.swing.JTextField patentesTxt;
+    public javax.swing.JTextField maquinariaNoUtilizadaTxt;
+    public javax.swing.JTextField maquinariasTxt;
+    public javax.swing.JTextField marcasRegistradasTxt;
+    public javax.swing.JTextField mobiliarioYEquipoTxt;
+    public javax.swing.JTextField mueblesYEnseresTxt;
+    public javax.swing.JTextField nombresComercialesTxt;
+    public javax.swing.JTextField obligacionesTxt;
+    public javax.swing.JTextField papeleriaUtilesTxt;
+    public javax.swing.JTextField patentesTxt;
     public javax.swing.JTextField perdidaTxt;
     public javax.swing.JTextField primaVentasTxt;
-    private javax.swing.JTextField primasTxt;
-    private javax.swing.JTextField propagandaPublicidad;
-    private javax.swing.JTextField proveedoresTxt;
+    public javax.swing.JTextField primasTxt;
+    public javax.swing.JTextField propagandaPublicidadTxt;
+    public javax.swing.JTextField proveedoresTxt;
     public javax.swing.JButton readButton;
-    private javax.swing.JTextField rentasAnticipoTxt;
-    private javax.swing.JTextField rentasPagadasAnticipoTxt;
+    public javax.swing.JTextField rentasAnticipoTxt;
+    public javax.swing.JTextField rentasPagadasAnticipoTxt;
     public javax.swing.JButton saveButtom;
-    private javax.swing.JTextField sueldosPorPagarTxt;
-    private javax.swing.JTextField terrenosNoUtilizadosTxt;
-    private javax.swing.JTextField terrenosTxt;
-    private javax.swing.JTextField totalActivos;
-    private javax.swing.JTextField totalActivosCirculantesTxt;
-    private javax.swing.JTextField totalActivosDiferibles;
-    private javax.swing.JTextField totalActivosDisponibles;
-    private javax.swing.JTextField totalActivosFijosTxt;
-    private javax.swing.JTextField totalActivosNoCirculantesTxt;
+    public javax.swing.JTextField sueldosPorPagarTxt;
+    public javax.swing.JTextField terrenosNoUtilizadosTxt;
+    public javax.swing.JTextField terrenosTxt;
+    public javax.swing.JTextField totalActivos;
+    public javax.swing.JTextField totalActivosCirculantesTxt;
+    public javax.swing.JTextField totalActivosDiferibles;
+    public javax.swing.JTextField totalActivosDisponibles;
+    public javax.swing.JTextField totalActivosFijosTxt;
+    public javax.swing.JTextField totalActivosNoCirculantesTxt;
     private javax.swing.JTextField totalActivosRealizablesTxt;
     public javax.swing.JTextField totalCapitalContribuido;
     public javax.swing.JTextField totalCapitalGanadoTxt;
-    private javax.swing.JTextField totalOtrosActivos;
-    private javax.swing.JTextField totalPasivoCirculanteTxt;
-    private javax.swing.JTextField totalPasivosNoCirculantesTxt;
+    public javax.swing.JTextField totalOtrosActivos;
+    public javax.swing.JTextField totalPasivoCirculanteTxt;
+    public javax.swing.JTextField totalPasivosNoCirculantesTxt;
     public javax.swing.JTextField totalPasivosTxt;
     public javax.swing.JTextField totalPatrimonioTxt;
     public javax.swing.JTextField utilidadTxt;
     public javax.swing.JTextField utilidadesRetenidasTxt;
     // End of variables declaration//GEN-END:variables
+
+    
 }
