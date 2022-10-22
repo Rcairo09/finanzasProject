@@ -8,7 +8,7 @@ import com.grupojcc.finanzasproject.views.MainFrame;
 
 /**
  *
- * @author lenovo
+ * @author : Grupo de Finanzas - Camilo Castro - Cairo Rocha - Johnny Lagos
  */
 public class main {
     

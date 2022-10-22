@@ -4,6 +4,8 @@
  */
 package com.grupojcc.finanzasproject.controllers;
 
+import Vistas.ESMenu;
+import Vistas.IncomeStatement;
 import com.grupojcc.finanzasproject.views.ESFFrame;
 import com.grupojcc.finanzasproject.views.MainFrame;
 import com.grupojcc.finanzasproject.views.razonesFrame;
@@ -18,6 +20,7 @@ public class ESFController implements ActionListener{
     MainFrame mf;
     ESFFrame esff;
     razonesFrame rF;
+    IncomeStatement iS;
     
     public ESFController(MainFrame mf){
         this.mf = mf;
@@ -37,6 +40,10 @@ public class ESFController implements ActionListener{
             case "razones":
                 isVisibleRazonesF();
                 break;
+            case "estado":
+                IncomeStatement Is = new IncomeStatement();
+                Is.setVisible(true);
+                
         }
     }
     
@@ -49,7 +56,7 @@ public class ESFController implements ActionListener{
         ESFFrame esff = new ESFFrame();
         mf.isVisible(esff, true);
     }
-    
+
     
     
 }

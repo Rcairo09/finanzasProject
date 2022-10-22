@@ -5,6 +5,7 @@
 package com.grupojcc.finanzasproject.views;
 
 import com.grupojcc.finanzasproject.controllers.ESFController;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 
 /**
@@ -26,6 +27,7 @@ public class MainFrame extends javax.swing.JFrame {
         ESFController esfc = new ESFController(this);
         razonesButtonItem.addActionListener(esfc);
         newButtonItem.addActionListener(esfc);
+        estadoButtonItem.addActionListener(esfc);
     }
     
     
@@ -60,6 +62,7 @@ public class MainFrame extends javax.swing.JFrame {
         newMenuItem = new javax.swing.JMenu();
         newButtonItem = new javax.swing.JMenuItem();
         razonesButtonItem = new javax.swing.JMenuItem();
+        estadoButtonItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jLabel2.setText("jLabel2");
@@ -88,6 +91,10 @@ public class MainFrame extends javax.swing.JFrame {
         razonesButtonItem.setActionCommand("razones");
         newMenuItem.add(razonesButtonItem);
 
+        estadoButtonItem.setText("Estado de Resultado");
+        estadoButtonItem.setActionCommand("estado");
+        newMenuItem.add(estadoButtonItem);
+
         jMenuBar1.add(newMenuItem);
 
         jMenu2.setText("Opciones");
@@ -115,6 +122,7 @@ public class MainFrame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem estadoButtonItem;
     public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
